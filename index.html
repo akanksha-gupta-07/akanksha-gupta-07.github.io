@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Akanksha Gupta — Scrum Master & Agile Project Leader</title>
+  <meta name="description" content="PMP-Certified Scrum Master and Agile Project Leader with 8+ years driving end-to-end project delivery in healthcare and consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --grad: linear-gradient(91.78deg, #3300D9 1.24%, #9D20C9 73.37%, #DF7A6C 166.1%);
+      --grad-soft: linear-gradient(135deg, #eef0ff 0%, #fbf2ee 100%);
+      --ink-900: #1a1a1f;
+      --ink-700: #3a3a42;
+      --ink-500: #66666b;
+      --ink-300: #a8a8b0;
+      --ink-100: #e6e6ec;
+      --ink-50: #f5f5f8;
+      --bg: #ffffff;
+      --bg-soft: #fcf9f5;
+      --accent: #6b3df5;
+      --accent-warm: #df7a6c;
+      --accent-deep: #3300d9;
+      --shadow-sm: 0 1px 2px rgba(20, 20, 40, 0.04), 0 1px 3px rgba(20, 20, 40, 0.06);
+      --shadow-md: 0 4px 12px rgba(20, 20, 40, 0.06), 0 12px 32px rgba(20, 20, 40, 0.04);
+      --shadow-lg: 0 16px 48px rgba(51, 0, 217, 0.10);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink-900);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--ink-900);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- NAV ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      background: rgba(255, 255, 255, 0.78);
+      border-bottom: 1px solid rgba(20, 20, 40, 0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--ink-700);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      background: var(--ink-900);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: var(--accent-deep); }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      padding: 96px 0 80px;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 500px at 12% -10%, rgba(51, 0, 217, 0.08), transparent 60%),
+        radial-gradient(700px 500px at 100% 10%, rgba(223, 122, 108, 0.10), transparent 60%),
+        radial-gradient(600px 400px at 60% 100%, rgba(157, 32, 201, 0.07), transparent 60%);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid rgba(51, 0, 217, 0.18);
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-700);
+      margin-bottom: 22px;
+    }
+    .pill .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #20c997;
+      box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.18);
+    }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 76px);
+      font-weight: 700;
+      max-width: 14ch;
+    }
+    .hero h1 .grad {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero .lede {
+      margin-top: 22px;
+      max-width: 60ch;
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--ink-700);
+    }
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--grad);
+      color: #fff;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-ghost {
+      background: #fff;
+      color: var(--ink-900);
+      border-color: var(--ink-100);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-meta {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      max-width: 760px;
+    }
+    .stat {
+      padding: 18px 18px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--ink-100);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(8px);
+    }
+    .stat .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .stat .lbl {
+      font-size: 12.5px;
+      color: var(--ink-500);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 720px) {
+      .hero-meta { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ---------- SECTION SHELL ---------- */
+    section { padding: 96px 0; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      color: var(--ink-500);
+      max-width: 60ch;
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--ink-100);
+      border-bottom: 1px solid var(--ink-100);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .about-grid p {
+      font-size: 17px;
+      color: var(--ink-700);
+      margin-bottom: 18px;
+    }
+    .about-side {
+      background: #fff;
+      border: 1px solid var(--ink-100);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .about-side h4 {
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-500);
+      margin-bottom: 16px;
+    }
+    .focus-list { display: grid; gap: 14px; }
+    .focus-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .focus-bullet {
+      flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 8px;
+      background: var(--grad-soft);
+      display: grid; place-items: center;
+      color: var(--accent-deep);
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .focus-item strong { display: block; font-size: 15px; }
+    .focus-item span { font-size: 13.5px; color: var(--ink-500); }
+
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ---------- COMPETENCIES ---------- */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--ink-100);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--grad);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(51, 0, 217, 0.15);
+    }
+    .card:hover::before { opacity: 1; }
+    .card-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--grad-soft);
+      display: grid; place-items: center;
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 5px 11px;
+      background: var(--ink-50);
+      border: 1px solid var(--ink-100);
+      border-radius: 999px;
+      font-size: 12.5px;
+      color: var(--ink-700);
+      font-weight: 500;
+    }
+    @media (max-width: 860px) {
+      .comp-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- EXPERIENCE TIMELINE ---------- */
+    .experience { background: var(--bg-soft); border-top: 1px solid var(--ink-100); }
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 24px;
+    }
+    .role {
+      background: #fff;
+      border: 1px solid var(--ink-100);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .role:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .role-title h3 {
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+    .role-company {
+      font-size: 15px;
+      color: var(--accent-deep);
+      font-weight: 600;
+    }
+    .role-period {
+      font-size: 13px;
+      color: var(--ink-500);
+      background: var(--ink-50);
+      padding: 6px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .role ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .role ul li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 15px;
+      color: var(--ink-700);
+    }
+    .role ul li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 9px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--grad);
+    }
+
+    /* ---------- EDUCATION & CERTS ---------- */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .edu-card {
+      background: #fff;
+      border: 1px solid var(--ink-100);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    .edu-card h3 { font-size: 18px; margin-bottom: 6px; }
+    .edu-card .meta { font-size: 14px; color: var(--ink-500); margin-bottom: 14px; }
+    .edu-card .points { display: grid; gap: 10px; font-size: 14.5px; color: var(--ink-700); }
+    .edu-card .points span {
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .edu-card .points span::before {
+      content: "✓";
+      color: var(--accent-deep);
+      font-weight: 700;
+    }
+    @media (max-width: 720px) {
+      .edu-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- CONTACT CTA ---------- */
+    .cta-wrap {
+      background: var(--grad);
+      border-radius: var(--radius-xl);
+      padding: 64px 48px;
+      color: #fff;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(500px 300px at 0% 0%, rgba(255,255,255,0.16), transparent 60%),
+        radial-gradient(400px 300px at 100% 100%, rgba(255,255,255,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-wrap h2 {
+      color: #fff;
+      font-size: clamp(28px, 4vw, 44px);
+      margin-bottom: 14px;
+    }
+    .cta-wrap p {
+      max-width: 56ch;
+      margin: 0 auto 28px;
+      color: rgba(255,255,255,0.86);
+      font-size: 17px;
+    }
+    .cta-actions {
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-on-grad {
+      background: #fff;
+      color: var(--ink-900);
+    }
+    .btn-on-grad:hover { transform: translateY(-2px); }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.12); }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 36px 0 48px;
+      border-top: 1px solid var(--ink-100);
+      color: var(--ink-500);
+      font-size: 13.5px;
+    }
+    .foot-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .foot-links { display: flex; gap: 18px; }
+    .foot-links a:hover { color: var(--accent); }
+
+    /* ---------- ANIMATIONS ---------- */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">Dr. Akanksha Gupta</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in touch →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="container">
+    <span class="pill"><span class="dot"></span> Open to new opportunities</span>
+    <h1>Building <span class="grad">agile teams</span> that ship outcomes that matter.</h1>
+    <p class="lede">PMP-Certified Scrum Master and Agile Project Leader with 8+ years driving end-to-end project delivery across healthcare and consulting. I help cross-functional teams remove blockers, sharpen velocity, and stay aligned on what actually moves the business.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Let's connect →</a>
+      <a href="#experience" class="btn btn-ghost">View experience</a>
+    </div>
+    <div class="hero-meta">
+      <div class="stat">
+        <div class="num">8+</div>
+        <div class="lbl">Years of experience</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl">Cross-functional teams led</div>
+      </div>
+      <div class="stat">
+        <div class="num">PMP</div>
+        <div class="lbl">Certified professional</div>
+      </div>
+      <div class="stat">
+        <div class="num">MHA</div>
+        <div class="lbl">Master's in Hospital Admin</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <span class="eyebrow">About</span>
+    <h2 class="section-title">A delivery leader at the intersection of agility and impact.</h2>
+    <div class="about-grid" style="margin-top: 32px;">
+      <div>
+        <p>I'm a PMP-Certified Project Management Professional with a Master's in Hospital Administration and over 8+ years driving end-to-end project delivery across healthcare and consulting sectors.</p>
+        <p>My day-to-day is facilitating Scrum ceremonies — sprint planning, stand-ups, reviews, retrospectives — while coaching cross-functional teams in Agile and Scrum practices. I'm at my best proactively identifying impediments, managing risks and dependencies, and creating the conditions for teams to do their best work.</p>
+        <p>I believe great delivery is equal parts process discipline, stakeholder communication, and human judgment. Tools like Jira, Confluence, and Trello keep transparency high; the rest is empathy, mentorship, and continuous improvement.</p>
+      </div>
+      <aside class="about-side">
+        <h4>What I focus on</h4>
+        <div class="focus-list">
+          <div class="focus-item">
+            <span class="focus-bullet">01</span>
+            <div>
+              <strong>Sprint velocity & flow</strong>
+              <span>Optimizing cadence, throughput, and predictability.</span>
+            </div>
+          </div>
+          <div class="focus-item">
+            <span class="focus-bullet">02</span>
+            <div>
+              <strong>Risk & impediment removal</strong>
+              <span>Shielding the team and unblocking dependencies fast.</span>
+            </div>
+          </div>
+          <div class="focus-item">
+            <span class="focus-bullet">03</span>
+            <div>
+              <strong>Stakeholder alignment</strong>
+              <span>Clear reporting, dashboards, and tight feedback loops.</span>
+            </div>
+          </div>
+          <div class="focus-item">
+            <span class="focus-bullet">04</span>
+            <div>
+              <strong>Coaching & continuous improvement</strong>
+              <span>Mentoring teams toward self-organization and ownership.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIES -->
+<section id="skills">
+  <div class="container">
+    <span class="eyebrow">Core competencies</span>
+    <h2 class="section-title">Frameworks, tools, and the soft skills that hold delivery together.</h2>
+    <p class="section-sub">A blend of formal Agile training, hands-on tooling, and the leadership behaviours that turn ceremonies into outcomes.</p>
+    <div class="comp-grid">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Agile Frameworks & Practices</h3>
+        <p style="font-size: 14.5px; color: var(--ink-500);">Running ceremonies, refining backlogs, and tailoring the framework to the team — not the other way around.</p>
+        <div class="tag-list">
+          <span class="tag">Scrum Framework</span>
+          <span class="tag">Kanban</span>
+          <span class="tag">Waterfall</span>
+          <span class="tag">SAFe Awareness</span>
+          <span class="tag">Sprint Planning</span>
+          <span class="tag">Backlog Refinement</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛠</div>
+        <h3>Tools & Technologies</h3>
+        <p style="font-size: 14.5px; color: var(--ink-500);">Keeping the team's source of truth tidy, transparent, and easy for stakeholders to read at a glance.</p>
+        <div class="tag-list">
+          <span class="tag">Jira</span>
+          <span class="tag">Confluence</span>
+          <span class="tag">Trello</span>
+          <span class="tag">Atlassian Atlas</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Leadership & Soft Skills</h3>
+        <p style="font-size: 14.5px; color: var(--ink-500);">The work that doesn't fit neatly into a ticket — communication, coaching, and unblocking people.</p>
+        <div class="tag-list">
+          <span class="tag">Stakeholder Communication</span>
+          <span class="tag">Risk Management</span>
+          <span class="tag">Cross-Functional Collaboration</span>
+          <span class="tag">Mentoring & Coaching</span>
+          <span class="tag">Continuous Improvement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="container">
+    <span class="eyebrow">Experience</span>
+    <h2 class="section-title">Roles that shaped how I lead delivery today.</h2>
+    <p class="section-sub">From product UAT and partner enablement to running Scrum for multiple teams in parallel, every step has sharpened my craft.</p>
+    <div class="timeline">
+
+      <article class="role">
+        <div class="role-head">
+          <div class="role-title">
+            <h3>Associate Project Manager (Scrum Master Functions)</h3>
+            <div class="role-company">Personify Health</div>
+          </div>
+          <span class="role-period">Nov 2024 – Oct 2025</span>
+        </div>
+        <ul>
+          <li>Facilitated sprint planning, daily stand-ups, sprint reviews, and retrospectives for 3 cross-functional project teams, ensuring adherence to Scrum and alignment with business objectives.</li>
+          <li>Coached and mentored team members in Agile and Scrum practices, fostering a culture of continuous improvement and self-organization.</li>
+          <li>Created and maintained comprehensive project dashboards and documentation in Jira and Confluence, enhancing sprint visibility and stakeholder reporting.</li>
+          <li>Proactively identified project risks, blockers, and dependencies; developed and executed mitigation strategies to shield the team and minimize delivery impact.</li>
+          <li>Organized and drove regular team syncs and cross-functional status updates to ensure consistent stakeholder communication.</li>
+          <li>Mentored bootcamp candidates over a 3-month period, contributing to talent development and Agile onboarding.</li>
+          <li>Recognized as <strong>Employee of the Month</strong> for exceptional performance, leadership, and delivery excellence.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <div class="role-title">
+            <h3>Senior Executive – Projects</h3>
+            <div class="role-company">ECHO India</div>
+          </div>
+          <span class="role-period">Aug 2022 – Jul 2024</span>
+        </div>
+        <ul>
+          <li>Led end-to-end <strong>User Acceptance Testing (UAT)</strong> for the iECHO mobile application across iOS and Android, owning UAT planning, scope definition, environment readiness, and entry/exit criteria sign-off with business stakeholders.</li>
+          <li>Designed UAT test scenarios, scripts, and traceability matrices mapped against Functional Requirement Specifications (FRS), ensuring every business requirement was covered before production release.</li>
+          <li>Coordinated cross-functional UAT cycles with Tech, IT, Training, and Quality teams — driving daily defect triage, severity classification, and re-test workflows in Jira to accelerate resolution.</li>
+          <li>Acted as the bridge between business users and engineering during UAT — gathering user feedback, validating fixes, and securing formal UAT sign-off prior to release.</li>
+          <li>Authored key technical documentation including FRS, UAT test cases, defect reports, and user manuals to support product development and stakeholder alignment.</li>
+          <li>Developed and executed project strategies with healthcare partners, mapping detailed scope, milestones, and deliverables.</li>
+          <li>Identified project risks and implemented mitigation strategies, conducting regular milestone reviews to detect and resolve issues proactively.</li>
+          <li>Generated comprehensive reports and dashboards providing stakeholders with actionable project and UAT progress insights.</li>
+          <li>Revamped Help Centre content and delivered technical training sessions to onboard partners onto iECHO, enhancing user experience and adoption.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <div class="role-title">
+            <h3>Project Consultant – ABDM</h3>
+            <div class="role-company">IQVIA</div>
+          </div>
+          <span class="role-period">Jul 2021 – Jul 2022</span>
+        </div>
+        <ul>
+          <li>Oversaw <strong>User Acceptance Testing (UAT)</strong> for the ABHA mobile application across iOS and Android — defining UAT strategy, building test plans, and validating production readiness against business and regulatory requirements.</li>
+          <li>Authored UAT test cases and scripts grounded in Functional Requirement Specifications (FRS), executing both functional and end-to-end scenarios to certify quality before each release.</li>
+          <li>Compiled detailed UAT defect reports, prioritized issues by severity and impact, and triaged them in Jira to the tech team — driving timely resolution and streamlining the defect management workflow.</li>
+          <li>Led UAT review meetings with stakeholders, tracked defect burn-down, retested fixes, and signed off on release readiness with documented evidence and reproducible test results.</li>
+          <li>Developed key technical documents including FRS, milestone reports, UAT logs, and user manuals to support cross-functional delivery.</li>
+          <li>Partnered with UI/UX teams to design wireframes and mock screens for state-level demonstrations, contributing to stakeholder engagement.</li>
+          <li>Assisted private stakeholders with sandbox-based ABDM integration, collating and disseminating APIs to streamline the integration process.</li>
+          <li>Revamped the Grievance Redressal system to enhance user experience and operational efficiency.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <div class="role-title">
+            <h3>Operations Manager & CRM Lead</h3>
+            <div class="role-company">Caredose</div>
+          </div>
+          <span class="role-period">Feb 2018 – Jun 2021</span>
+        </div>
+        <ul>
+          <li>Managed operations and CRM, leading a team of 6 to achieve departmental goals while serving as the primary point of contact for customer queries and satisfaction.</li>
+          <li>Led cross-functional teams in problem-solving initiatives focused on process improvements, new product launches, and workflow optimization.</li>
+          <li>Developed and implemented new operational processes to enhance workflow efficiency and productivity organization-wide.</li>
+          <li>Conducted thorough quality checks before product dispatch, ensuring compliance with quality standards and customer expectations.</li>
+          <li>Provided guidance, training, and support to operations staff, fostering accountability and alignment with company objectives.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTIFICATIONS -->
+<section id="education">
+  <div class="container">
+    <span class="eyebrow">Education & Certifications</span>
+    <h2 class="section-title">Credentials that anchor the practice.</h2>
+    <p class="section-sub">A foundation in healthcare administration paired with project management certification.</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3>Master's in Hospital Administration (MHA)</h3>
+        <div class="meta">Postgraduate Degree</div>
+        <div class="points">
+          <span>Healthcare systems, operations, and quality management</span>
+          <span>Foundation for healthcare-sector project delivery</span>
+          <span>Bridges clinical context with project execution</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <h3>PMP — Project Management Professional</h3>
+        <div class="meta">PMI Certification</div>
+        <div class="points">
+          <span>End-to-end project lifecycle management</span>
+          <span>Risk, scope, schedule, and stakeholder discipline</span>
+          <span>Globally recognized standard of practice</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" style="padding-top: 32px;">
+  <div class="container">
+    <div class="cta-wrap">
+      <h2>Let's build something the team is proud of.</h2>
+      <p>Whether you're hiring a Scrum Master, scaling delivery across multiple squads, or coaching a team toward better flow — I'd love to hear what you're working on.</p>
+      <div class="cta-actions">
+        <a href="mailto:akankshagupta1707@gmail.com" class="btn btn-on-grad">✉ akankshagupta1707@gmail.com</a>
+        <a href="tel:+919589363446" class="btn btn-outline-white">📞 +91 95893 63446</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot-inner">
+    <div>© <span id="yr"></span> Dr. Akanksha Gupta · Built with care.</div>
+    <div class="foot-links">
+      <a href="mailto:akankshagupta1707@gmail.com">Email</a>
+      <a href="tel:+919589363446">Phone</a>
+      <a href="#" id="linkedin-link" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('section, .role, .card, .edu-card').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
