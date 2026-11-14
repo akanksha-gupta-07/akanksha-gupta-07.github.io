@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Employee Engagement | Dr. Akanksha Gupta</title>
+<meta name="description" content="A diagnostic framework for workforce disengagement and voluntary attrition: five pathways, an exit-trigger overlay, a data analysis, and a practical playbook.">
+<meta property="og:title" content="Beyond Employee Engagement: Diagnosing the drivers of workforce disengagement">
+<meta property="og:description" content="Five routes to disengagement, the triggers that turn them into resignations, and what organizations can do about each.">
+<meta property="og:image" content="https://akanksha-gupta-07.github.io/projects/beyond-engagement/assets/framework.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<meta name="theme-color" content="#0e3b43">
+<style>
+  :root {
+    --ink: #11262b;
+    --quiet: #55696d;
+    --line: #cddad8;
+    --paper: #f3f7f6;
+    --card: #ffffff;
+    --accent: #0b6e6e;
+    --accent-soft: #d6efe9;
+    --signal: #e0572f;
+    --hero-bg: #0e3b43;
+    --hero-ink: #f2faf8;
+    --hero-muted: #a9cdc9;
+    --serif: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --sans: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .masthead { background: var(--hero-bg); color: var(--hero-ink); }
+  nav.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; font-size: 15px; }
+  nav.top a { text-decoration: none; color: var(--hero-muted); }
+  nav.top a:hover { color: var(--hero-ink); }
+  nav.top .brand { font: 700 17px var(--serif); color: var(--hero-ink); }
+
+  header.hero { padding: 36px 0 56px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-muted); margin: 0 0 12px; }
+  h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 6vw, 56px); line-height: 1.04; letter-spacing: -.025em; margin: 0 0 18px; }
+  .lede { font-size: 20px; color: var(--hero-muted); margin: 0 0 24px; max-width: 680px; }
+  .meta { font-size: 14px; color: var(--hero-muted); margin-bottom: 28px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid transparent; transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--signal); color: #fff; }
+  .btn.ghost { border-color: rgba(242,250,248,.4); color: var(--hero-ink); }
+  #report .btn.ghost { border-color: var(--accent); color: var(--accent); }
+
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-weight: 700; font-size: 32px; line-height: 1.12; letter-spacing: -.02em; margin: 0 0 16px; }
+  h3 { font-size: 18px; margin: 0 0 6px; }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--quiet); }
+  .small { font-size: 14px; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .stat .num { font-family: var(--serif); font-size: 38px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 10px; }
+  .stat p { font-size: 15px; margin: 0; }
+  .stat .src { display: block; font-size: 12.5px; color: var(--quiet); margin-top: 8px; }
+
+  blockquote.story { margin: 0 0 20px; padding: 20px 24px; background: var(--card); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; font-family: var(--sans); font-style: italic; font-size: 19px; line-height: 1.55; }
+  figure { margin: 24px 0; }
+  figure img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  figcaption { font-size: 13.5px; color: var(--quiet); margin-top: 8px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card .tag { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+  .card p { font-size: 15px; margin: 6px 0 0; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #f3f2ee; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+
+  ol.steps, ul.clean { padding-left: 20px; }
+  ol.steps li, ul.clean li { margin-bottom: 8px; }
+  .callout { background: var(--accent-soft); border-radius: 12px; padding: 20px 24px; }
+  .callout p:last-child { margin: 0; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skills span { font-size: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+  footer { padding: 40px 0 60px; font-size: 14px; color: var(--quiet); }
+  .refs li { font-size: 14px; margin-bottom: 6px; }
+
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    .stats { grid-template-columns: 1fr; }
+    section { padding: 36px 0; }
+    th, td { padding: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="masthead">
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="../../">Dr. Akanksha Gupta</a>
+    <span><a href="../../">&larr; Portfolio</a> &nbsp;·&nbsp; <a href="#report">Full report</a></span>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Case study · Organizational development</p>
+    <h1>Beyond Employee Engagement</h1>
+    <p class="lede">A diagnostic framework for why capable, fairly treated people quietly disengage and leave, and what organizations can do about it.</p>
+    <p class="meta">Dr. Akanksha Gupta · November 2026 · Secondary research, data analysis and framework design</p>
+    <div class="buttons">
+      <a class="btn primary" href="assets/Beyond-Employee-Engagement-Report.pdf" download>Download the full report (PDF)</a>
+      <a class="btn ghost" href="https://github.com/akanksha-gupta-07/beyond-engagement-analysis">View the data analysis</a>
+    </div>
+  </header>
+</div>
+</div>
+<div class="wrap">
+
+  <section id="problem">
+    <h2>The problem</h2>
+    <blockquote class="story">Year four. Sana has a good salary, a kind manager and a team she likes. Her last engagement survey was positive. But somewhere in the past year, every decision started needing three approvals and her ideas stopped going anywhere. Last week she quietly updated her CV.</blockquote>
+    <p class="muted small">Sana is a fictional composite, like every persona in the report.</p>
+    <p>Organizations have measured engagement for decades, yet it keeps falling. The scores show <em>how many</em> people are pulling back, but not <em>why</em>, so the response is usually a broad program of perks and pulse surveys that treats disengagement as one condition. The research says it is several.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">20%</div><p>of employees worldwide are engaged, the lowest level since 2020.</p><span class="src">Gallup, State of the Global Workplace 2026 (2025 data)</span></div>
+      <div class="stat"><div class="num">10.4&times;</div><p>A toxic culture predicted attrition more than ten times as strongly as pay.</p><span class="src">Sull, Sull &amp; Zweig, MIT Sloan Management Review, 2022</span></div>
+      <div class="stat"><div class="num">16%</div><p>of knowledge workers trust their senior leaders to make the right decisions for their people.</p><span class="src">HP Work Relationship Index 2025, cited in Deloitte 2026</span></div>
+    </div>
+  </section>
+
+  <section id="framework">
+    <h2>The Disengagement Pathways Framework</h2>
+    <p>Drawing on more than 40 studies and reports, I separated five distinct routes to disengagement, each with its own causes, early signals and remedies, plus an overlay for the events that turn disengagement into resignation.</p>
+    <figure>
+      <img src="assets/framework.png" alt="Diagram: five pathways (Depleted, Stalled, Disillusioned, Disconnected, Drifting) lead to disengagement; an exit trigger such as a promotion round, reorganization, new manager, outside offer or return from leave turns it into resignation. The backbone is self-determination theory, job demands-resources and the psychological contract.">
+      <figcaption>Pathways explain the slow build-up; triggers explain the moment of exit. Without a trigger, many people simply stay and withdraw.</figcaption>
+    </figure>
+    <div class="cards">
+      <div class="card"><span class="tag">Depleted</span><h3>Demands outrun support</h3><p>Overtime, exhaustion and cynicism. Grounded in the job demands-resources model and burnout research.</p></div>
+      <div class="card"><span class="tag">Stalled</span><h3>Growth stops</h3><p>No next step, or nothing new to learn. Often the reliable performers organizations overlook.</p></div>
+      <div class="card"><span class="tag">Disillusioned</span><h3>A promise feels broken</h3><p>Trust drops after a missed promotion or a reorganization. Grounded in psychological contract theory.</p></div>
+      <div class="card"><span class="tag">Disconnected</span><h3>Ties wear thin</h3><p>Isolation, or active exclusion. A new manager or remote distance can remove what holds people in place.</p></div>
+      <div class="card"><span class="tag">Drifting</span><h3>Work stops feeling like yours</h3><p>Pay and team are fine, but autonomy and purpose are gone. The pathway engagement surveys miss most.</p></div>
+    </div>
+  </section>
+
+  <section id="data">
+    <h2>Testing it against data</h2>
+    <p>I analysed the IBM HR Analytics Employee Attrition dataset (1,470 fictional employee records) in Python as a methodological proof of concept: a demonstration of how an organization could combine several warning signs into a risk score instead of relying on a single engagement score.</p>
+    <figure>
+      <img src="assets/attrition_by_warning_signs.png" alt="Bar chart: attrition is 4.5% for employees with no warning signs, 12.0% with one, 31.4% with two and 58.9% with all three, against a company average of 16.1%.">
+      <figcaption>Risk climbs steeply as warning signs add up. 92% of the people who left showed at least one sign.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/attrition_by_risk_group.png" alt="Bar chart: groups with the highest attrition include first year at the company (34.9%), lowest job involvement (33.7%), first year with current manager (32.3%), poor work-life balance (31.2%), overtime (30.5%) and lowest pay quarter (29.3%), against a 16.1% average.">
+      <figcaption>Overtime, low involvement and a new manager each go with roughly double the average attrition.</figcaption>
+    </figure>
+    <div class="callout">
+      <p><strong>Two findings worth noting.</strong> The Stalled pathway is hidden in raw numbers but appears among long-tenured staff (14.2% vs 9.1% attrition when five or more years past promotion). And pay drives exits when it is clearly low, but matters far less once it is fair, exactly as Herzberg's "hygiene factor" idea predicts.</p>
+    </div>
+    <p class="muted small" style="margin-top:16px">The data is fictional, so results illustrate the method rather than real-world rates. They show associations, not causes.</p>
+  </section>
+
+  <section id="toolkit">
+    <h2>From diagnosis to action</h2>
+    <p>The report turns the framework into tools a manager or HR partner could use on Monday.</p>
+    <table>
+      <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Three-layer diagnostic</strong></td><td>Early-warning signals from existing HR data, a ten-item pulse survey that points to a pathway, and a manager conversation that confirms it</td></tr>
+        <tr><td><strong>Intervention playbook</strong></td><td>Remedies matched to each pathway, with a clear owner and a measure of success</td></tr>
+        <tr><td><strong>Re-entry plan</strong></td><td>A first-90-days plan for employees returning from parental leave, sabbaticals or illness, one of the most predictable risk moments in a career</td></tr>
+        <tr><td><strong>12-month roadmap</strong></td><td>Diagnose, pilot, scale and embed, with gates between phases, a RACI and program KPIs</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="myths">
+    <h2>Myths the evidence busts</h2>
+    <ul class="clean">
+      <li><strong>"A pay raise will fix it."</strong> Pay prevents dissatisfaction but doesn't create motivation, unless it is genuinely below fair.</li>
+      <li><strong>"People leave because they're unhappy."</strong> Many leave after a shock, such as a reorganization or an outside offer.</li>
+      <li><strong>"No burnout means engaged."</strong> Burnout and engagement run on separate tracks.</li>
+      <li><strong>"Plateauing is an age thing."</strong> It hurts at any career stage, because it breaks expectations.</li>
+      <li><strong>"Managers can't do much about it."</strong> Supervision, support and fairness shift turnover.</li>
+    </ul>
+  </section>
+
+  <section id="approach">
+    <h2>My approach</h2>
+    <p>I come to this from healthcare operations and project management (BDS, MHA, PMP), with more than eight years in consulting and startups. The project combines three lenses: a clinician's habit of diagnosing before treating, a project manager's discipline of turning analysis into a phased plan with owners and measures, and a long-standing interest in the psychology of work.</p>
+    <div class="skills">
+      <span>Research synthesis</span><span>Organizational psychology</span><span>Framework design</span><span>People analytics (Python)</span><span>Intervention design</span><span>Program management</span><span>Executive communication</span>
+    </div>
+  </section>
+
+  <section id="report">
+    <h2>Read the full report</h2>
+    <p>The 20-page report covers the research, the five pathways with personas, the full data analysis, the diagnostic toolkit, the intervention playbook, the re-entry spotlight, the roadmap and its limitations.</p>
+    <div class="buttons">
+      <a class="btn primary" href="assets/Beyond-Employee-Engagement-Report.pdf" download>Download the full report (PDF)</a>
+      <a class="btn ghost" href="https://github.com/akanksha-gupta-07/beyond-engagement-analysis">View the analysis code</a>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Key sources:</strong> Gallup, <em>State of the Global Workplace 2026</em>; Deloitte, <em>2026 Global Human Capital Trends</em>; Microsoft, <em>2026 Work Trend Index</em>; Sull, Sull &amp; Zweig (2022), <em>MIT Sloan Management Review</em>; plus 29 academic studies listed in the full report.</p>
+    <p>&copy; Dr. Akanksha Gupta</p>
+  </footer>
+</div>
+</body>
+</html>

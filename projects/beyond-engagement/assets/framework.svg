@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 760 476' width='1520' height='952' font-family='Inter, Helvetica, Arial, sans-serif' font-size='13' role='img' aria-labelledby='t'>
+<title id='t'>Disengagement Pathways Framework: five routes lead to disengagement; a trigger turns it into a resignation</title>
+<rect width='760' height='476' fill='#ffffff'/>
+<defs><marker id='a' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0 0L10 5L0 10z' fill='#8FA5A3'/></marker></defs>
+<text x='24' y='34' font-size='15' font-weight='600' fill='#11262B'>Five routes lead to disengagement; a trigger turns it into a resignation</text>
+<g fill='none' stroke='#8FA5A3' stroke-width='1.25'>
+<path d='M264 92.0L302 228' marker-end='url(#a)'/>
+<path d='M264 160.0L302 228' marker-end='url(#a)'/>
+<path d='M264 228.0L302 228' marker-end='url(#a)'/>
+<path d='M264 296.0L302 228' marker-end='url(#a)'/>
+<path d='M264 364.0L302 228' marker-end='url(#a)'/>
+<path d='M464 228H488V164.0H510' marker-end='url(#a)'/><path d='M624.0 208V246' marker-end='url(#a)'/></g>
+<rect x='24' y='64' width='240' height='56' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25'/><text x='36' y='86' font-weight='600' fill='#11262B'>Depleted</text><text x='36' y='104' font-size='11.5' fill='#55696D'>Demands outrun support</text>
+<rect x='24' y='132' width='240' height='56' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25'/><text x='36' y='154' font-weight='600' fill='#11262B'>Stalled</text><text x='36' y='172' font-size='11.5' fill='#55696D'>No next step or nothing to learn</text>
+<rect x='24' y='200' width='240' height='56' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25'/><text x='36' y='222' font-weight='600' fill='#11262B'>Disillusioned</text><text x='36' y='240' font-size='11.5' fill='#55696D'>An unwritten promise feels broken</text>
+<rect x='24' y='268' width='240' height='56' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25'/><text x='36' y='290' font-weight='600' fill='#11262B'>Disconnected</text><text x='36' y='308' font-size='11.5' fill='#55696D'>Weak ties: isolation or exclusion</text>
+<rect x='24' y='336' width='240' height='56' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25'/><text x='36' y='358' font-weight='600' fill='#11262B'>Drifting</text><text x='36' y='376' font-size='11.5' fill='#55696D'>Little autonomy, growth or purpose</text>
+<rect x='304' y='190' width='160' height='76' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25'/><text x='384.0' y='214' text-anchor='middle' font-weight='600' fill='#11262B'>Disengagement</text><text x='384.0' y='234' text-anchor='middle' font-size='11.5' fill='#55696D'>People stay but</text><text x='384.0' y='250' text-anchor='middle' font-size='11.5' fill='#55696D'>pull back effort</text><text x='384.0' y='290' text-anchor='middle' font-size='11.5' fill='#55696D'>No trigger: they stay, withdrawn</text>
+<rect x='512' y='120' width='224' height='88' rx='8' fill='#fff' stroke='#8FA5A3' stroke-width='1.25' stroke-dasharray='5 3'/><text x='524' y='144' font-weight='600' fill='#11262B'>Exit trigger</text><text x='524' y='164' font-size='11.5' fill='#55696D'>Promotion round, reorganization,</text><text x='524' y='180' font-size='11.5' fill='#55696D'>new manager, outside offer,</text><text x='524' y='196' font-size='11.5' fill='#55696D'>return from leave</text>
+<rect x='512' y='248' width='224' height='48' rx='8' fill='#D6EFE9' stroke='#0B6E6E' stroke-width='2'/><text x='624.0' y='277' text-anchor='middle' font-weight='600' fill='#11262B'>Resignation</text>
+<rect x='24' y='412' width='712' height='40' rx='8' fill='#EEF4F3' stroke='#8FA5A3' stroke-width='1.25'/><text x='380' y='437' text-anchor='middle' fill='#11262B'>Backbone: self-determination theory, job demands-resources, psychological contract</text>
+</svg>

@@ -104,6 +104,18 @@
   details li { margin: 0 0 .5rem; }
   details li::marker { color: var(--teal); }
 
+  /* projects */
+  .project { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.8rem; text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
+  .project:hover { transform: translateY(-3px); border-color: var(--teal); }
+  @media (max-width: 860px) { .project { grid-template-columns: 1fr; } }
+  .project .kicker { font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); margin: 0 0 .4rem; }
+  .project h3 { font: 700 1.6rem/1.15 var(--display); letter-spacing: -.015em; margin: 0 0 .6rem; }
+  .project p { margin: 0 0 1rem; color: var(--muted); }
+  .project .facts { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 1.1rem; padding: 0; list-style: none; }
+  .project .facts li { background: var(--teal-soft); padding: .28rem .75rem; border-radius: 999px; font-size: .9rem; }
+  .project .more { font-weight: 600; color: var(--signal); }
+  .project img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+
   /* skills */
   .skills { display: grid; gap: 1.8rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .skills h3 { font: 700 1.05rem var(--display); margin: 0 0 .6rem; padding-bottom: .5rem; border-bottom: 2px solid var(--teal); }
@@ -133,6 +145,7 @@
   <div class="wrap">
     <a class="brand" href="#top">Dr. Akanksha Gupta</a>
     <nav aria-label="Primary">
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
@@ -164,6 +177,23 @@
       </aside>
     </div>
   </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="sub">Independent work that brings together my clinical training, project management and an interest in the psychology of work.</p>
+      <a class="project" href="projects/beyond-engagement/">
+        <div>
+          <p class="kicker">Case study · Organizational development</p>
+          <h3>Beyond Employee Engagement</h3>
+          <p>Why do capable, fairly treated people quietly disengage and leave? A diagnostic framework of five pathways and the triggers that turn them into resignations, tested on HR data and turned into a practical playbook.</p>
+          <ul class="facts"><li>40+ studies reviewed</li><li>Python analysis</li><li>Diagnostic toolkit</li><li>12-month roadmap</li></ul>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+        <img src="projects/beyond-engagement/assets/framework.png" alt="Diagram of the Disengagement Pathways Framework: five pathways lead to disengagement, and an exit trigger turns it into resignation." loading="lazy">
+      </a>
+    </div>
+  </section>
 
   <section id="experience">
     <div class="wrap">
