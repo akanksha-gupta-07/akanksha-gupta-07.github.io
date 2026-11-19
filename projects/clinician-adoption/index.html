@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Enrolment to Everyday Use | Dr. Akanksha Gupta</title>
+<meta name="description" content="Designing digital health tools that clinicians in India actually adopt: a barrier map, an adoption-risk scorecard, a product requirements checklist and a rollout playbook.">
+<meta property="og:title" content="From Enrolment to Everyday Use: Designing digital health tools clinicians in India actually adopt">
+<meta property="og:description" content="India has built digital health infrastructure at unmatched scale. The next phase is everyday clinical use: six predictable barriers, and how to design them out.">
+<meta property="og:image" content="https://akanksha-gupta-07.github.io/projects/clinician-adoption/assets/barrier-map.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<meta name="theme-color" content="#0e3b43">
+<style>
+  :root {
+    --ink: #11262b;
+    --quiet: #55696d;
+    --line: #cddad8;
+    --paper: #f3f7f6;
+    --card: #ffffff;
+    --accent: #0b6e6e;
+    --accent-soft: #d6efe9;
+    --signal: #e0572f;
+    --hero-bg: #0e3b43;
+    --hero-ink: #f2faf8;
+    --hero-muted: #a9cdc9;
+    --serif: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --sans: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .masthead { background: var(--hero-bg); color: var(--hero-ink); }
+  nav.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; font-size: 15px; }
+  nav.top a { text-decoration: none; color: var(--hero-muted); }
+  nav.top a:hover { color: var(--hero-ink); }
+  nav.top .brand { font: 700 17px var(--serif); color: var(--hero-ink); }
+
+  header.hero { padding: 36px 0 56px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-muted); margin: 0 0 12px; }
+  h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 6vw, 56px); line-height: 1.04; letter-spacing: -.025em; margin: 0 0 18px; }
+  .lede { font-size: 20px; color: var(--hero-muted); margin: 0 0 24px; max-width: 680px; }
+  .meta { font-size: 14px; color: var(--hero-muted); margin-bottom: 28px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid transparent; transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--signal); color: #fff; }
+  .btn.ghost { border-color: rgba(242,250,248,.4); color: var(--hero-ink); }
+  #report .btn.ghost { border-color: var(--accent); color: var(--accent); }
+
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-weight: 700; font-size: 32px; line-height: 1.12; letter-spacing: -.02em; margin: 0 0 16px; }
+  h3 { font-size: 18px; margin: 0 0 6px; }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--quiet); }
+  .small { font-size: 14px; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .stat .num { font-family: var(--serif); font-size: 38px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 10px; }
+  .stat p { font-size: 15px; margin: 0; }
+  .stat .src { display: block; font-size: 12.5px; color: var(--quiet); margin-top: 8px; }
+
+  blockquote.story { margin: 0 0 20px; padding: 20px 24px; background: var(--card); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; font-family: var(--sans); font-style: italic; font-size: 19px; line-height: 1.55; }
+  figure { margin: 24px 0; }
+  figure img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  figcaption { font-size: 13.5px; color: var(--quiet); margin-top: 8px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card .tag { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+  .card p { font-size: 15px; margin: 6px 0 0; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #f3f2ee; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+
+  ol.steps, ul.clean { padding-left: 20px; }
+  ol.steps li, ul.clean li { margin-bottom: 8px; }
+  .callout { background: var(--accent-soft); border-radius: 12px; padding: 20px 24px; }
+  .callout p:last-child { margin: 0; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skills span { font-size: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+  footer { padding: 40px 0 60px; font-size: 14px; color: var(--quiet); }
+
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    .stats { grid-template-columns: 1fr; }
+    section { padding: 36px 0; }
+    th, td { padding: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="masthead">
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="../../">Dr. Akanksha Gupta</a>
+    <span><a href="../../">&larr; Portfolio</a> &nbsp;·&nbsp; <a href="#report">Full report</a></span>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Case study · Digital health adoption</p>
+    <h1>From Enrolment to Everyday Use</h1>
+    <p class="lede">India has built the rails for digital health at a scale no other country has attempted. This case study looks at the next phase: what makes clinicians use digital tools in everyday care, and how product teams, consultants and implementation leaders can design for it.</p>
+    <p class="meta">Dr. Akanksha Gupta · November 2026 · Secondary research, framework design and toolkit</p>
+    <div class="buttons">
+      <a class="btn primary" href="assets/From-Enrolment-to-Everyday-Use-Report.pdf" download>Download the full report (PDF)</a>
+      <a class="btn ghost" href="#framework">See the Barrier Map</a>
+    </div>
+  </header>
+</div>
+</div>
+<div class="wrap">
+
+  <section id="problem">
+    <h2>The opportunity</h2>
+    <blockquote class="story">Dr Meera runs a district hospital OPD with three minutes per patient. The new records system went live with a target: every patient leaves registration with a digital health ID. The dashboard turned green. But to see an old report, she had to send a consent request to a phone the patient often didn't have in hand. Re-ordering the free blood test was faster. So she did.</blockquote>
+    <p class="muted small">Dr Meera is an illustrative composite, not a real person or case, like every persona in the report.</p>
+    <p>India's national digital health numbers show remarkable enrolment. The next measure, not yet published, is how often clinicians use those records in care. That is where the next phase of value lies.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">93.95 cr</div><p>ABHA digital health IDs created.</p><span class="src">Ministry of Health and Family Welfare, 10 July 2026</span></div>
+      <div class="stat"><div class="num">105 cr</div><p>health records linked to those IDs.</p><span class="src">Ministry of Health and Family Welfare, 10 July 2026</span></div>
+      <div class="stat"><div class="num">Not published</div><p>records opened by another clinician in care. A 15-interview study describes it as "extremely low".</p><span class="src">Kommuru &amp; Agarwal, HMPI, 2026</span></div>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <h2>Where the next phase begins</h2>
+    <figure>
+      <img src="assets/three-steps.png" alt="Diagram: three ABDM milestones. 1, ID created: counted, 93.95 crore. 2, record linked by a facility: counted, 105 crore. 3, record used in care by another clinician with consent: not published, described as extremely low.">
+      <figcaption>The dashboard reports the first two steps in crores. The third, where a clinician gains something, has no public number.</figcaption>
+    </figure>
+    <p>Clinicians are not the obstacle. In Indian surveys, 82&ndash;93% say they want digital tools, yet use stays low: in one Puducherry hospital, 82% of providers were willing to use mobile tools in care and 16% had. When asked why, they name time, legal risk, payment, missing equipment and missing support, not dislike of technology.</p>
+    <div class="callout">
+      <p><strong>The counter-example.</strong> India's national telemedicine service, eSanjeevani, passed 50 crore consultations in September 2026. In over 93% of them a health worker registers the patient and runs the call, and the doctor does only the clinical part. When the tool <em>is</em> the work, clinicians use it at national scale.</p>
+    </div>
+    <p class="muted small" style="margin-top:16px">Indian figures come from official data and mostly single-site surveys. Global studies are used where Indian evidence is missing, and the report labels the quality and transferability of each kind of evidence.</p>
+  </section>
+
+  <section id="framework">
+    <h2>The Clinician Adoption Barrier Map</h2>
+    <p>Drawing on around 40 cited sources, including Indian studies, government data and global research, I mapped six barriers that predict whether clinicians will use a tool. One overlay makes all of them worse, and one lens shows which barrier dominates where.</p>
+    <figure>
+      <img src="assets/barrier-map.png" alt="Diagram: the Clinician Adoption Barrier Map. An overlay, implementation choices, amplifies six barriers: workflow fit, value to me, trust and risk, capability, infrastructure, and identity and autonomy. A lens below shows the setting decides which barrier dominates.">
+      <figcaption>Workflow fit and value to me recur most across the failed cases in the report.</figcaption>
+    </figure>
+    <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <div class="card"><span class="tag">Public primary care</span><h3>Infrastructure</h3><p>IT infrastructure in only 28% of primary health centres; no IT staff to fix it.</p></div>
+      <div class="card"><span class="tag">Private hospitals</span><h3>Workflow fit</h3><p>93% of doctors in one hospital wanted electronic records. Cost, staffing and internet blocked them.</p></div>
+      <div class="card"><span class="tag">Private practice</span><h3>Value and legal risk</h3><p>74% of urologists knew the telemedicine rules; 53% still didn't use it, citing liability, pay and time.</p></div>
+      <div class="card"><span class="tag">Frontline workers</span><h3>Capability</h3><p>English-only apps, one-day training and patchy phones and internet hold back health workers.</p></div>
+    </div>
+  </section>
+
+  <section id="toolkit">
+    <h2>From diagnosis to action</h2>
+    <p>The report turns the Barrier Map into tools for the three people who decide whether a rollout works.</p>
+    <table>
+      <thead><tr><th>Tool</th><th>For</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Adoption-risk scorecard</strong></td><td>Consultants</td><td>Seven questions scored 0&ndash;2 with clinicians, based on the NASSS-CAT approach. 10 or more out of 14 means redesign before launch</td></tr>
+        <tr><td><strong>Product requirements checklist</strong></td><td>Product teams</td><td>Eleven checks, from "the core task fits a real consultation" to "log retrieval and overrides, not just logins"</td></tr>
+        <tr><td><strong>Clinician engagement plan</strong></td><td>Change leaders</td><td>What clinicians, frontline staff and leaders do before build, before launch, at launch and after</td></tr>
+        <tr><td><strong>Five-phase rollout playbook</strong></td><td>Implementation leads</td><td>Diagnose, co-design, live pilot, scale and sustain, with gates passed on use, not installation, and KPIs beyond logins</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="myths">
+    <h2>Myths the evidence busts</h2>
+    <ul class="clean">
+      <li><strong>"Enrolment equals adoption."</strong> 94 crore IDs exist; records retrieved in care are not even counted.</li>
+      <li><strong>"Doctors are just resistant to change."</strong> eSanjeevani passed 50 crore consultations.</li>
+      <li><strong>"Awareness is the problem."</strong> Most urologists knew the telemedicine rules and still didn't use it.</li>
+      <li><strong>"Training fixes adoption."</strong> Kerala's e-Health pilot failed until the workflow itself was redesigned.</li>
+      <li><strong>"Mandates guarantee use."</strong> England's mandated national IT programme was dismantled after costs above &pound;9.8 billion.</li>
+      <li><strong>"An accurate AI will be used."</strong> Google's eye-screening AI was over 90% accurate in the lab; more than a fifth of clinic images were rejected.</li>
+    </ul>
+  </section>
+
+  <section id="approach">
+    <h2>My approach</h2>
+    <p>I trained as a dentist and in hospital administration, and I have worked inside India's digital health rollouts: overseeing UAT for the ABHA app as an ABDM project consultant, and leading UAT for the iECHO app. That experience showed me the gap this project is about. Testing checks whether a product meets its specification; adoption depends on whether it fits a three-minute consultation. The report adds clinical acceptance criteria, real-clinic testing and use-based KPIs to close that gap.</p>
+    <div class="skills">
+      <span>Research synthesis</span><span>Digital health product strategy</span><span>Implementation science (NASSS, NPT)</span><span>Framework design</span><span>Requirements and UAT</span><span>Change management</span><span>Executive communication</span>
+    </div>
+  </section>
+
+  <section id="report">
+    <h2>Read the full report</h2>
+    <p>The 20-page report covers the evidence on scale versus use, the Barrier Map with signals and fixes, four personas, five case studies (eSanjeevani, Kerala e-Health, ABDM, Google's AI in Thailand and England's National Programme for IT), a practitioner lens, the toolkit, the rollout playbook and its limitations.</p>
+    <div class="buttons">
+      <a class="btn primary" href="assets/From-Enrolment-to-Everyday-Use-Report.pdf" download>Download the full report (PDF)</a>
+      <a class="btn ghost" href="../beyond-engagement/">See my other case study</a>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Key sources:</strong> Ministry of Health and Family Welfare and PIB releases (2026); Kommuru &amp; Agarwal (2026), <em>Health Management, Policy and Innovation</em>; Sood et al. (2025), <em>Oxford Open Digital Health</em>; Greenhalgh et al. (2017, 2018, 2020) on the NASSS framework; Beede et al. (2020); plus Indian and global studies listed in the full report.</p>
+    <p>&copy; Dr. Akanksha Gupta</p>
+  </footer>
+</div>
+</body>
+</html>

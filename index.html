@@ -107,6 +107,7 @@
   /* projects */
   .project { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.8rem; text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
   .project:hover { transform: translateY(-3px); border-color: var(--teal); }
+  .project + .project { margin-top: 1.25rem; }
   @media (max-width: 860px) { .project { grid-template-columns: 1fr; } }
   .project .kicker { font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); margin: 0 0 .4rem; }
   .project h3 { font: 700 1.6rem/1.15 var(--display); letter-spacing: -.015em; margin: 0 0 .6rem; }
@@ -191,6 +192,16 @@
           <span class="more">Read the case study &rarr;</span>
         </div>
         <img src="projects/beyond-engagement/assets/framework.png" alt="Diagram of the Disengagement Pathways Framework: five pathways lead to disengagement, and an exit trigger turns it into resignation." loading="lazy">
+      </a>
+      <a class="project" href="projects/clinician-adoption/">
+        <div>
+          <p class="kicker">Case study · Digital health adoption</p>
+          <h3>From Enrolment to Everyday Use</h3>
+          <p>India has built digital health infrastructure at unmatched scale. The next phase is everyday clinical use. Six predictable barriers that shape whether clinicians adopt a tool, with a scorecard, a requirements checklist and a rollout playbook to design for adoption.</p>
+          <ul class="facts"><li>~40 sources cited</li><li>Barrier Map</li><li>Adoption-risk scorecard</li><li>Rollout playbook</li></ul>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+        <img src="projects/clinician-adoption/assets/barrier-map.png" alt="Diagram of the Clinician Adoption Barrier Map: six barriers, an implementation overlay and a setting lens." loading="lazy">
       </a>
     </div>
   </section>
