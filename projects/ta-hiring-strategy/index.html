@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>120 Hires, Built to Stay | Dr. Akanksha Gupta</title>
+<meta name="description" content="A talent acquisition strategy proposal: how I would staff a new 120-person hub in 6 months without repeating 35% first-year attrition.">
+<meta property="og:title" content="120 Hires, Built to Stay: a talent acquisition strategy proposal">
+<meta property="og:description" content="Capacity planning, quality of hire, a returnship, stress tests and stakeholder plays for staffing a new hub at speed.">
+<meta property="og:image" content="https://akanksha-gupta-07.github.io/projects/ta-hiring-strategy/assets/three-bets.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<meta name="theme-color" content="#0e3b43">
+<style>
+  :root {
+    --paper: #f3f7f6;
+    --surface: #ffffff;
+    --ink: #11262b;
+    --muted: #55696d;
+    --rule: #cddad8;
+    --accent: #0b6e6e;
+    --accent-soft: #d6efe9;
+    --flag: #b4471f;
+    --flag-soft: #fbe9e1;
+    --signal: #e0572f;
+    --hero-bg: #0e3b43;
+    --hero-ink: #f2faf8;
+    --hero-muted: #a9cdc9;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0b171a;
+      --surface: #11262b;
+      --ink: #e8f2f0;
+      --muted: #9db5b2;
+      --rule: #264047;
+      --accent: #5fd0c5;
+      --accent-soft: #17393d;
+      --flag: #ff8a62;
+      --flag-soft: #3a2219;
+      --hero-bg: #0a2a30;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .masthead { background: var(--hero-bg); color: var(--hero-ink); }
+  nav.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; font-size: 15px; flex-wrap: wrap; }
+  nav.top a { text-decoration: none; color: var(--hero-muted); }
+  nav.top a:hover { color: var(--hero-ink); }
+  nav.top .brand { font: 700 17px var(--display); color: var(--hero-ink); }
+  header.hero { padding: 36px 0 48px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-muted); margin: 0 0 12px; }
+  h1 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 6vw, 54px); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 18px; text-wrap: balance; }
+  .lede { font-size: 20px; color: var(--hero-muted); margin: 0 0 20px; max-width: 680px; }
+  .meta { font-size: 14px; color: var(--hero-muted); margin: 0 0 20px; }
+  .hero-note { font-size: 15px; background: rgba(242,250,248,.08); border-left: 3px solid var(--signal); border-radius: 0 8px 8px 0; padding: 12px 16px; max-width: 700px; color: var(--hero-ink); }
+  .targets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 32px 0 0; }
+  .target { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 16px; }
+  .target .num { font-family: var(--display); font-size: 26px; font-weight: 700; line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .target .lbl { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+  .targets-note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+  section { padding: 44px 0; border-bottom: 1px solid var(--rule); }
+  h2 { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 14px; text-wrap: balance; display: flex; gap: 14px; align-items: baseline; }
+  h2 .n { font-family: var(--body); font-size: 14px; color: var(--accent); font-weight: 600; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+  h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; }
+  p { margin: 0 0 16px; max-width: 70ch; }
+  .lead { font-size: 18.5px; }
+  ul, ol.plain { margin: 0 0 16px; padding-left: 22px; max-width: 70ch; }
+  li { margin-bottom: 6px; }
+  .table-wrap { overflow-x: auto; margin: 8px 0 20px; border: 1px solid var(--rule); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.5; }
+  th, td { text-align: left; vertical-align: top; padding: 11px 13px; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; background: var(--accent-soft); white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.total td { font-weight: 600; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 9px; border-radius: 999px; white-space: nowrap; }
+  .tag.hiring { background: var(--accent-soft); color: var(--accent); }
+  .tag.work { background: var(--flag-soft); color: var(--flag); }
+  .callout { background: var(--accent-soft); border-radius: 12px; padding: 18px 22px; margin: 8px 0 18px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .formula { font-variant-numeric: tabular-nums; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 14px; display: inline-block; font-size: 15px; }
+  figure { margin: 16px 0 24px; }
+  figure .frame { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 16px; }
+  figure svg { display: block; width: 100%; min-width: 620px; height: auto; }
+  figcaption { font-size: 13.5px; color: var(--muted); margin-top: 8px; }
+  svg text { font-family: var(--body); }
+  .s-ink { fill: var(--ink); }
+  .s-muted { fill: var(--muted); }
+  .s-box { fill: none; stroke: var(--rule); stroke-width: 1.5; }
+  .s-line { stroke: var(--rule); stroke-width: 1.5; fill: none; }
+  .s-goal { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+  .s-found { fill: var(--accent-soft); stroke: var(--rule); stroke-width: 1.5; }
+  .s-bar { fill: var(--accent-soft); stroke: var(--muted); stroke-width: 1; }
+  .s-bar-key { fill: var(--accent); fill-opacity: 0.25; stroke: var(--accent); stroke-width: 2; }
+  .s-band { fill: var(--flag-soft); }
+  .s-grid { stroke: var(--rule); stroke-width: 1; }
+  .checks { list-style: none; padding-left: 0; }
+  .checks li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; }
+  .checks li::before { content: ""; width: 13px; height: 13px; border: 1.5px solid var(--accent); border-radius: 3px; margin-top: 7px; }
+  footer { padding: 40px 0 60px; font-size: 14px; color: var(--muted); }
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    .targets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    section { padding: 36px 0; }
+    h2 { font-size: 25px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="masthead">
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="../../">Dr. Akanksha Gupta</a>
+    <span><a href="../../">&larr; Portfolio</a> &nbsp;·&nbsp; <a href="#decisions">Key decisions</a> &nbsp;·&nbsp; <a href="#stress">Stress test</a></span>
+  </nav>
+  <header class="hero">
+    <p class="eyebrow">Strategy proposal · Talent acquisition</p>
+    <h1>120 Hires, Built to Stay</h1>
+    <p class="lede">How I would staff a new 120-person delivery hub in 6 months without repeating the 35% first-year attrition of the company's existing site.</p>
+    <p class="meta">Dr. Akanksha Gupta · November 2026 · Workforce planning, delivery design and stakeholder strategy</p>
+    <p class="hero-note"><strong>About this proposal:</strong> a strategy for a realistic, anonymised scenario, showing how I would diagnose the problem, weigh options and make decisions. It is not a record of work already delivered; every figure is a planning assumption or a target.</p>
+  </header>
+</div>
+</div>
+<div class="wrap">
+  <div class="targets" aria-label="Headline targets">
+    <div class="target"><div class="num">120</div><div class="lbl">hires to deliver in 6 months</div></div>
+    <div class="target"><div class="num">35% &rarr; 18%</div><div class="lbl">first-year attrition target</div></div>
+    <div class="target"><div class="num">30% &rarr; 10%</div><div class="lbl">share of hires via agencies</div></div>
+    <div class="target"><div class="num">75%</div><div class="lbl">returnship conversion target</div></div>
+  </div>
+  <p class="targets-note">Targets, not results.</p>
+
+  <section id="summary">
+      <h2>Summary</h2>
+      <p class="lead">My recommendation is to treat hiring as a programme built on three bets: a right-sized hiring engine, a quality-of-hire system, and a returnship to reach experienced talent that competitors overlook.</p>
+      <h3>What this proposal shows</h3>
+      <ul>
+        <li>Turning a business goal into a workforce and capacity plan</li>
+        <li>Testing both hiring and workplace causes before prescribing fixes</li>
+        <li>Making trade-offs between speed, cost and quality explicit</li>
+        <li>Running delivery week to week on funnel ratios, SLAs and contingency triggers</li>
+        <li>Stress-testing targets and planning how the plan flexes</li>
+        <li>Designing an inclusive talent programme with a business case</li>
+        <li>Holding the line with clients and managers using data</li>
+      </ul>
+    </section>
+
+    <section id="scenario">
+      <h2><span class="n">01</span>The scenario</h2>
+      <p>Company X, a 4,000-person services firm, has won a client contract that needs a new delivery hub fully staffed in 6 months. The CHRO's brief: "Hit the number, but don't build a revolving door."</p>
+      <ul>
+        <li><strong>Volume and mix:</strong> 120 roles across four role families, from entry-level associates to 10 managers.</li>
+        <li><strong>Legacy attrition:</strong> at the existing site, 35% of new hires leave within 12 months.</li>
+        <li><strong>Agency dependence:</strong> 30% of current hires come through agencies, at roughly three times the cost of direct hires.</li>
+        <li><strong>A thin local market:</strong> strong competition for experienced specialists and team leads in the hub city.</li>
+        <li><strong>Starting from zero:</strong> no local recruiters, no employer brand in the city, and hiring managers who are not yet hired themselves.</li>
+      </ul>
+    </section>
+
+    <section id="framing">
+      <h2><span class="n">02</span>How I framed the problem</h2>
+      <p>The obvious problem is speed. The bigger risk is quality: at 35% attrition, the hub would lose about 40 of its 120 hires in year one and need to hire them again.</p>
+      <h3>Three questions I would answer before choosing any tactic</h3>
+      <ol class="plain">
+        <li>How much hiring capacity do 120 hires in 6 months actually need, and in what order?</li>
+        <li>Why does the existing site lose so many new hires, and which causes would follow us to the hub?</li>
+        <li>Where can we find experienced people that competitors are not already fighting over?</li>
+      </ol>
+      <h3>Working hypotheses on the 35% attrition</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Hypothesis</th><th>Type</th><th>Data to test it</th><th>Lever if confirmed</th></tr></thead>
+        <tbody>
+          <tr><td>Candidates are not told the reality of the job</td><td><span class="tag hiring">Hiring</span></td><td>Exit-interview themes; leavers' tenure by role</td><td>Realistic job previews</td></tr>
+          <tr><td>Interviews are unstructured, so decisions rest on gut feel</td><td><span class="tag hiring">Hiring</span></td><td>Interview records; score spread by interviewer</td><td>Structured interviews, calibration</td></tr>
+          <tr><td>Rushed hires leave sooner</td><td><span class="tag hiring">Hiring</span></td><td>Attrition compared with time to hire</td><td>A minimum process floor; pipelines built ahead</td></tr>
+          <tr><td>Recruiters are measured on speed only</td><td><span class="tag hiring">Hiring</span></td><td>Current recruiter KPIs</td><td>Quality-of-hire scorecard</td></tr>
+          <tr><td>Shift patterns and workload cause burnout</td><td><span class="tag work">Workplace</span></td><td>Exits by shift; overtime and absence data</td><td>Shift and staffing design with operations</td></tr>
+          <tr><td>Pay is below the local market</td><td><span class="tag work">Workplace</span></td><td>Salary benchmarks; offer-decline and exit reasons</td><td>Pay-band review with HR and rewards</td></tr>
+          <tr><td>First-line managers are not ready to lead</td><td><span class="tag work">Workplace</span></td><td>Attrition and engagement by manager</td><td>Manager onboarding; hiring managers for people-leadership evidence</td></tr>
+          <tr><td>Onboarding in the first 90 days is weak</td><td><span class="tag hiring">Hiring</span> <span class="tag work">Workplace</span></td><td>Timing of exits; new-hire survey results</td><td>A joint 30-60-90 plan with HR and operations</td></tr>
+        </tbody>
+      </table></div>
+      <p>TA can fix the hiring causes directly. The workplace causes need operations, HR and rewards. My job there is to bring the evidence early, because better hiring cannot make up for a broken shift pattern or uncompetitive pay.</p>
+      <div class="callout"><p><strong>My fixes are conditional playbooks.</strong> The quality-of-hire system and the returnship below are options prepared in advance. I would choose, size and calibrate them once the 30-day data is in, not before.</p></div>
+    </section>
+
+    <section id="strategy">
+      <h2><span class="n">03</span>Strategy at a glance</h2>
+      <p>I would build the plan on three bets, each answering one part of the CHRO's brief: deliver the number, stop the revolving door, and do it without relying on agencies.</p>
+      <figure>
+        <div class="frame">
+          <svg viewBox="0 0 760 392" role="img" aria-label="One goal supported by three bets: a scalable engine, quality of hire, and new talent pools">
+            <rect class="s-goal" x="24" y="16" width="712" height="52" rx="8"/>
+            <text class="s-ink" x="380" y="48" text-anchor="middle" font-size="15" font-weight="600">Goal: 120 hires in 6 months, with first-year attrition under 18%</text>
+            <line class="s-line" x1="140" y1="68" x2="140" y2="92"/>
+            <line class="s-line" x1="380" y1="68" x2="380" y2="92"/>
+            <line class="s-line" x1="620" y1="68" x2="620" y2="92"/>
+            <g>
+              <rect class="s-box" x="24" y="92" width="232" height="208" rx="8"/>
+              <text class="s-ink" x="140" y="124" text-anchor="middle" font-size="15" font-weight="600">Scalable engine</text>
+              <line class="s-line" x1="40" y1="140" x2="240" y2="140"/>
+              <text class="s-ink" x="40" y="168" font-size="13.5">Capacity-based team of 6</text>
+              <text class="s-ink" x="40" y="194" font-size="13.5">Managers hired first</text>
+              <text class="s-ink" x="40" y="220" font-size="13.5">Talent pools 6 weeks ahead</text>
+              <line class="s-line" x1="40" y1="246" x2="240" y2="246"/>
+              <text class="s-muted" x="40" y="276" font-size="12.5">Target: 120 hires in 6 months</text>
+            </g>
+            <g>
+              <rect class="s-box" x="264" y="92" width="232" height="208" rx="8"/>
+              <text class="s-ink" x="380" y="124" text-anchor="middle" font-size="15" font-weight="600">Quality of hire</text>
+              <line class="s-line" x1="280" y1="140" x2="480" y2="140"/>
+              <text class="s-ink" x="280" y="168" font-size="13.5">Job scorecards</text>
+              <text class="s-ink" x="280" y="194" font-size="13.5">Structured interviews</text>
+              <text class="s-ink" x="280" y="220" font-size="13.5">Realistic job previews</text>
+              <line class="s-line" x1="280" y1="246" x2="480" y2="246"/>
+              <text class="s-muted" x="280" y="276" font-size="12.5">Target: attrition 35% to 18%</text>
+            </g>
+            <g>
+              <rect class="s-box" x="504" y="92" width="232" height="208" rx="8"/>
+              <text class="s-ink" x="620" y="124" text-anchor="middle" font-size="15" font-weight="600">New talent pools</text>
+              <line class="s-line" x1="520" y1="140" x2="720" y2="140"/>
+              <text class="s-ink" x="520" y="168" font-size="13.5">Returnship cohort</text>
+              <text class="s-ink" x="520" y="194" font-size="13.5">Referrals and sourcing</text>
+              <text class="s-ink" x="520" y="220" font-size="13.5">Campus partnerships</text>
+              <line class="s-line" x1="520" y1="246" x2="720" y2="246"/>
+              <text class="s-muted" x="520" y="276" font-size="12.5">Target: agencies 30% to 10%</text>
+            </g>
+            <rect class="s-found" x="24" y="316" width="712" height="48" rx="8"/>
+            <text class="s-ink" x="380" y="345" text-anchor="middle" font-size="13.5">Foundation: weekly dashboard, hiring-manager SLAs, trained interview panels</text>
+          </svg>
+        </div>
+        <figcaption>One goal, three bets, one shared foundation.</figcaption>
+      </figure>
+    </section>
+
+    <section id="decisions">
+      <h2><span class="n">04</span>Key decisions and trade-offs</h2>
+      <p>Every choice here gives something up. These are the six decisions I think matter most, and how I would make them.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Decision</th><th>Options considered</th><th>My recommendation</th><th>Why</th><th>Trade-off I accept</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Who does the hiring?</strong></td><td>Outsource to a recruitment firm (RPO) / in-house team / hybrid</td><td>In-house team, plus a search firm for the 4 most senior roles</td><td>The hub needs long-term hiring capability and an employer brand; RPO would leave none behind</td><td>Slower start while recruiters are hired in the prep month</td></tr>
+          <tr><td><strong>Speed vs process</strong></td><td>Fast, unstructured hiring / full structured process for all roles</td><td>Structured interviews for all roles, with a shorter 2-stage version for associates</td><td>Rushed, gut-feel hiring is one likely driver of the 35% attrition</td><td>Each hire takes a few more days</td></tr>
+          <tr><td><strong>Hiring order</strong></td><td>All roles in parallel / managers first</td><td>Managers first, then their teams</td><td>Managers can join panels and own their team's hiring</td><td>Volume hiring starts in month 2, not month 1</td></tr>
+          <tr><td><strong>Filling specialist roles</strong></td><td>Pay premiums to attract people from competitors / grow new talent pools</td><td>Returnship for experienced professionals after a career break, plus referrals</td><td>Experienced talent, less competition, lower cost, a strong employer-brand story</td><td>A 16-week programme needs manager time and a paid cohort</td></tr>
+          <tr><td><strong>Agency use</strong></td><td>Keep at 30% / ban agencies / cap at 10%</td><td>Cap at 10%, for niche and senior roles only</td><td>Cuts cost while keeping a safety valve for hard roles</td><td>Recruiters carry more of the load</td></tr>
+          <tr><td><strong>How to judge recruiters</strong></td><td>Speed and volume / quality of hire as well</td><td>A scorecard that weighs quality alongside speed</td><td>What gets measured drives behaviour</td><td>Quality data only matures after 90 days</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="capacity">
+      <h2><span class="n">05</span>Workforce and capacity plan</h2>
+      <p>My estimate is that the hub needs about 5.7 recruiter FTEs. I would size the team from demand, not from a headcount guess.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Role family</th><th class="num">Hires</th><th>Hiring window</th><th class="num">Hires per recruiter per month</th><th class="num">Recruiter FTE</th></tr></thead>
+        <tbody>
+          <tr><td>Associates (entry level)</td><td class="num">70</td><td>Months 2–6</td><td class="num">8</td><td class="num">1.8</td></tr>
+          <tr><td>Specialists (finance, analytics, tech)</td><td class="num">25</td><td>Months 1–5</td><td class="num">3</td><td class="num">1.7</td></tr>
+          <tr><td>Team leads</td><td class="num">15</td><td>Months 1–4</td><td class="num">4</td><td class="num">0.9</td></tr>
+          <tr><td>Managers (6 in-house, 4 via search firm)</td><td class="num">10</td><td>Prep–month 3</td><td class="num">1.5</td><td class="num">1.3</td></tr>
+          <tr class="total"><td>Total</td><td class="num">120</td><td></td><td></td><td class="num">5.7</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Proposed team</h3>
+      <ul>
+        <li>4 recruiters: 2 on volume hiring, 1 on specialists, 1 on leaders and team leads</li>
+        <li>1 sourcer, building candidate pipelines 4–6 weeks ahead of demand</li>
+        <li>1 coordinator for scheduling and offers, freeing about 15% of recruiter time</li>
+      </ul>
+      <h3>Allowing for ramp-up</h3>
+      <p>Recruiters hired in the prep month will not be at full speed in month 1. I would cover the gap three ways:</p>
+      <ul>
+        <li>Fill 2 of the 4 recruiter roles with experienced recruiters seconded from the existing site for the first 3 months, so the team starts with people who know the business.</li>
+        <li>Plan new recruiters at 50% productivity in month 1 and full productivity from month 2, which matches when volume hiring begins.</li>
+        <li>Use the search firm for the 4 most senior roles from day one, so leadership hiring does not wait for the team.</li>
+      </ul>
+      <p>The productivity figures are common rules of thumb; I would replace them with the company's own data in the first month.</p>
+    </section>
+
+    <section id="delivery">
+      <h2><span class="n">06</span>Running the delivery engine</h2>
+      <p>A capacity plan only works if the team runs on clear numbers each week. This is how I would run delivery.</p>
+      <h3>Target funnel ratios (starting assumptions, recalibrated monthly)</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Role family</th><th class="num">Screened per hire</th><th class="num">Screen to interview</th><th class="num">Interview to offer</th><th class="num">Offer acceptance</th><th class="num">Offer to joining</th></tr></thead>
+        <tbody>
+          <tr><td>Associates</td><td class="num">25</td><td class="num">30%</td><td class="num">40%</td><td class="num">88%</td><td class="num">92%</td></tr>
+          <tr><td>Specialists</td><td class="num">12</td><td class="num">40%</td><td class="num">30%</td><td class="num">80%</td><td class="num">90%</td></tr>
+          <tr><td>Team leads</td><td class="num">10</td><td class="num">40%</td><td class="num">30%</td><td class="num">85%</td><td class="num">90%</td></tr>
+          <tr><td>Managers</td><td class="num">8</td><td class="num">50%</td><td class="num">25%</td><td class="num">80%</td><td class="num">90%</td></tr>
+        </tbody>
+      </table></div>
+      <p>Notice periods of 30–90 days for experienced hires mean specialist and leader offers must be made by month 4 to join by month 6. I would track offer-to-joining drop-off as closely as offer acceptance, with weekly keep-warm contact during notice periods.</p>
+      <h3>Bottleneck thresholds</h3>
+      <ul>
+        <li>Pipeline coverage: at least 3 shortlisted candidates per open role at interview stage</li>
+        <li>Aging requisitions: amber at 30 days open, red at 45 days</li>
+        <li>Stage time: any candidate waiting more than 5 working days at one stage is flagged</li>
+      </ul>
+      <h3>Weekly operating rhythm</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>When</th><th>What</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Monday</td><td>Pipeline review with each recruiter</td><td>Spot red requisitions, stuck candidates and coverage gaps</td></tr>
+          <tr><td>Monday</td><td>Rebalance requisition loads</td><td>Move roles from any recruiter above 120% of target load</td></tr>
+          <tr><td>Wednesday</td><td>Hiring-manager SLA check</td><td>Escalate breaches to the hub head after two misses</td></tr>
+          <tr><td>Thursday</td><td>Recruiter coaching (fortnightly 1:1s, call shadowing)</td><td>Use each recruiter's funnel to find where their candidates drop</td></tr>
+          <tr><td>Friday</td><td>One-page dashboard to leadership</td><td>Hires vs plan, funnel by role family, quality score, risks</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Hiring-manager SLAs</strong>, agreed before roles open: CV feedback within 48 hours, interview slots within 5 working days, and a decision within 24 hours of the final round. When a manager is consistently slow, I would offer trained panel substitutes before escalating.</p>
+      <p><strong>Protecting the team at peak:</strong> a cap on active requisitions per recruiter, one interview-free day a week, and rotating recruiters off the hardest roles every 6–8 weeks.</p>
+      <h3>Contingency triggers</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Trigger</th><th>Threshold</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Hires behind plan</td><td>More than 10% behind at any month-end</td><td>Activate a pre-contracted recruiter (1-week start); raise agency cap to 15% for that role family only</td></tr>
+          <tr><td>Slow time to fill</td><td>Over 45 days on 20% or more of open roles</td><td>Sourcer reprioritises; add a targeted job-board campaign</td></tr>
+          <tr><td>Thin pipeline</td><td>Under 3 shortlisted per role for 2 weeks</td><td>Reopen silver-medal candidates; widen search to nearby cities</td></tr>
+          <tr><td>Recruiter overload</td><td>Above 120% of target load for 2 weeks</td><td>Rebalance, then bring in contract support</td></tr>
+          <tr><td>Offer declines rise</td><td>Acceptance under 80% for 4 weeks</td><td>Review offers against market with rewards; audit candidate experience</td></tr>
+          <tr><td>Joining drop-off rises</td><td>More than 10% of accepted offers not joining</td><td>Strengthen pre-boarding; extend offers in proportion to the drop</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sourcing">
+      <h2><span class="n">07</span>Proposed sourcing mix</h2>
+      <p>I would cut agency hiring from 30% to 10% by shifting to referrals, direct sourcing and the returnship, matching each channel to the roles it fills best.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Channel</th><th class="num">Planned hires</th><th>Best for</th><th>Key move</th></tr></thead>
+        <tbody>
+          <tr><td>Employee referrals</td><td class="num">30 (25%)</td><td>Associates, team leads</td><td>A boosted referral bonus for the first 90 days; staff at the existing site invited to the hub launch</td></tr>
+          <tr><td>Direct sourcing</td><td class="num">24 (20%)</td><td>Specialists, team leads</td><td>Talent pools and nurture campaigns built 6 weeks ahead</td></tr>
+          <tr><td>Job boards and careers site</td><td class="num">24 (20%)</td><td>Associates</td><td>A hub careers page with day-in-the-life videos</td></tr>
+          <tr><td>Returnship cohort</td><td class="num">18 (15%)</td><td>Specialists, team leads</td><td>Paid 16-week programme (see below)</td></tr>
+          <tr><td>Campus and early career</td><td class="num">12 (10%)</td><td>Associates</td><td>Two partner colleges, one assessment day each</td></tr>
+          <tr><td>Agencies and search firm</td><td class="num">12 (10%)</td><td>Managers, niche specialists</td><td>Fixed-fee search for senior roles only</td></tr>
+          <tr class="total"><td>Total</td><td class="num">120</td><td></td><td></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="quality">
+      <h2><span class="n">08</span>Quality-of-hire system</h2>
+      <p>This is my playbook for the hiring-process causes. I would switch on each element only where the 30-day data shows its cause is real, and calibrate it to what the data shows.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Element</th><th>What it involves</th><th>Cause it addresses</th></tr></thead>
+        <tbody>
+          <tr><td>Job scorecards</td><td>3–5 outcomes expected in the first year, agreed with the hiring manager before the role opens</td><td>Vague roles and mismatched expectations</td></tr>
+          <tr><td>Structured interviews</td><td>4 competencies per role, set questions, 1–5 rating anchors, 90-minute interviewer training</td><td>Gut-feel decisions</td></tr>
+          <tr><td>Realistic job previews</td><td>Shifts, workload and a team walk-through shared before the final round</td><td>Candidates surprised by the reality of the job</td></tr>
+          <tr><td>Calibration meetings</td><td>Panels score separately, then decide on evidence in a 15-minute meeting</td><td>The loudest voice winning</td></tr>
+          <tr><td>30-60-90 check-ins</td><td>Recruiter and manager check-ins with every new hire</td><td>Problems spotted too late</td></tr>
+        </tbody>
+      </table></div>
+      <h3>The quality-of-hire scorecard I would track monthly, alongside speed</h3>
+      <ul>
+        <li>Hiring-manager satisfaction at 90 days (1–5)</li>
+        <li>New-hire performance rating at 6 months</li>
+        <li>Retention at 90 days and 12 months</li>
+        <li>Time to full productivity</li>
+      </ul>
+    </section>
+
+    <section id="returnship">
+      <h2><span class="n">09</span>Returnship programme</h2>
+      <p>A returnship would turn the hardest gap, experienced specialists and team leads in a thin market, into an advantage. It hires professionals returning after a career break of 2+ years, for caregiving, relocation or other reasons.</p>
+      <h3>Why I would bet on it</h3>
+      <ul>
+        <li>Returners bring 5–15 years of experience, and few employers compete for them because many screen out CV gaps.</li>
+        <li>They are less exposed to poaching in their first year, which supports the retention goal.</li>
+        <li>It gives a new hub a distinctive employer-brand story in a city where no one knows the company.</li>
+      </ul>
+      <h3>Proposed design</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Element</th><th>Design choice</th></tr></thead>
+        <tbody>
+          <tr><td>Format</td><td>Paid 16-week programme in a real role, not a training course</td></tr>
+          <tr><td>Cohort</td><td>16–24 returners for specialist and team-lead roles, sized to the number of ready host managers</td></tr>
+          <tr><td>Timing</td><td>Source and select during the prep month; cohort starts at the beginning of month 1; week 16 falls at the end of month 4, leaving a full month to backfill any gaps before the deadline</td></tr>
+          <tr><td>Hosting</td><td>Only managers in seat by month 1 host returners, at most 4 each; experienced staff from the existing site act as remote mentors, so new managers are not overloaded during ramp-up</td></tr>
+          <tr><td>Sourcing</td><td>Returner communities, LinkedIn's career-break feature, a "careers after a break" event</td></tr>
+          <tr><td>Selection</td><td>Skills-based assessment; the CV gap is never treated as a negative</td></tr>
+          <tr><td>Flexibility</td><td>Hybrid work and a phased start (3 days a week for the first 4 weeks)</td></tr>
+          <tr><td>Support</td><td>A buddy, a mentor, refresher learning on current tools (including AI tools), fortnightly cohort circles</td></tr>
+          <tr><td>Manager readiness</td><td>A 60-minute briefing for every host manager</td></tr>
+          <tr><td>Conversion</td><td>A check-in at week 8; early offers from week 12 for strong performers; final decisions at week 16 against the same job scorecard as other hires; target 75%</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Condition to proceed:</strong> I would launch the returnship only if the 30-day checks confirm enough returner interest and at least 4 managers ready to host by month 1. If not, I would run a smaller pilot and shift those roles to direct sourcing.</p>
+      <p><strong>The business case I would put to finance:</strong> one returner should cost less than one agency hire, and every returner who stays avoids the cost of hiring again.</p>
+    </section>
+
+    <section id="roadmap">
+      <h2><span class="n">10</span>6-month roadmap</h2>
+      <p>I would run hiring as a programme: a prep month to build the team and tools, managers first, then monthly waves of volume hiring. Sourcing returners in the prep month lets the cohort start in month 1 and finish by the end of month 4, leaving a month to backfill any gaps.</p>
+      <figure>
+        <div class="frame">
+          <svg viewBox="0 0 760 318" role="img" aria-label="Roadmap: managers first, then volume hiring waves, with the returnship running from month 1 to month 4">
+            <rect class="s-band" x="439" y="40" width="149" height="232"/>
+            <g class="s-grid">
+              <line x1="216" y1="40" x2="216" y2="272"/><line x1="290" y1="40" x2="290" y2="272"/><line x1="365" y1="40" x2="365" y2="272"/><line x1="439" y1="40" x2="439" y2="272"/><line x1="514" y1="40" x2="514" y2="272"/><line x1="588" y1="40" x2="588" y2="272"/><line x1="662" y1="40" x2="662" y2="272"/><line x1="736" y1="40" x2="736" y2="272"/>
+            </g>
+            <line class="s-line" x1="216" y1="40" x2="736" y2="40"/>
+            <g class="s-muted" font-size="12" text-anchor="middle">
+              <text x="253" y="28">Prep</text><text x="327" y="28">Month 1</text><text x="402" y="28">Month 2</text><text x="476" y="28">Month 3</text><text x="551" y="28">Month 4</text><text x="625" y="28">Month 5</text><text x="699" y="28">Month 6</text>
+            </g>
+            <g class="s-ink" font-size="13.5">
+              <text x="24" y="68">Team and foundations</text>
+              <text x="24" y="104">Managers</text>
+              <text x="24" y="140">Specialists, team leads</text>
+              <text x="24" y="176">Associates</text>
+              <text x="24" y="212" font-weight="600">Returnship</text>
+              <text x="24" y="248">Quality of hire</text>
+            </g>
+            <rect class="s-bar" x="220" y="53" width="141" height="20" rx="10"/>
+            <rect class="s-bar" x="220" y="89" width="289" height="20" rx="10"/>
+            <rect class="s-bar" x="294" y="125" width="364" height="20" rx="10"/>
+            <rect class="s-bar" x="369" y="161" width="363" height="20" rx="10"/>
+            <rect class="s-bar" x="220" y="197" width="66" height="20" rx="10"/>
+            <rect class="s-bar-key" x="294" y="197" width="290" height="20" rx="10"/>
+            <rect class="s-bar" x="369" y="233" width="363" height="20" rx="10"/>
+            <g class="s-ink" font-size="12">
+              <text x="232" y="67">Team + scorecards</text>
+              <text x="232" y="103">Managers hired first</text>
+              <text x="306" y="139">Pipelines 6 weeks ahead</text>
+              <text x="381" y="175">Monthly hiring waves</text>
+              <text x="229" y="211">Sourcing</text>
+              <text x="306" y="211" font-weight="600">16-week cohort, 75% target</text>
+              <text x="381" y="247">Check-ins + monthly scorecard</text>
+            </g>
+            <text class="s-muted" x="513" y="296" text-anchor="middle" font-size="12">Peak volume: add a contract recruiter</text>
+          </svg>
+        </div>
+        <figcaption>Six workstreams across a prep month and months 1 to 6. The shaded band marks peak volume.</figcaption>
+      </figure>
+    </section>
+
+    <section id="measures">
+      <h2><span class="n">11</span>How I would measure success</h2>
+      <p>I would agree these measures with the CHRO and finance before hiring starts, so success is defined up front rather than argued about later.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Measure</th><th class="num">Existing site (scenario baseline)</th><th class="num">Target for the hub</th></tr></thead>
+        <tbody>
+          <tr><td>Hires delivered by month 6</td><td class="num">n/a</td><td class="num">120</td></tr>
+          <tr><td>Average time to fill</td><td class="num">52 days</td><td class="num">35 days</td></tr>
+          <tr><td>Offer acceptance rate</td><td class="num">71%</td><td class="num">85%</td></tr>
+          <tr><td>Hiring-manager satisfaction at 90 days</td><td class="num">3.2 / 5</td><td class="num">4.2 / 5</td></tr>
+          <tr><td>90-day new-hire retention</td><td class="num">82%</td><td class="num">95%</td></tr>
+          <tr><td>First-year attrition</td><td class="num">35%</td><td class="num">18% or lower</td></tr>
+          <tr><td>Share of hires via agencies</td><td class="num">30%</td><td class="num">10% or lower</td></tr>
+          <tr><td>Returnship conversion</td><td class="num">n/a</td><td class="num">75%</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Leading indicators, checked weekly:</strong> pipeline coverage per open role, interviewer training completed, scorecards signed off before roles open, and offer decline reasons. These show whether the plan is on track months before attrition data arrives.</p>
+    </section>
+
+    <section id="stress">
+      <h2><span class="n">12</span>Stress-testing the plan</h2>
+      <p>The targets above are deliberately stretching, so I would plan for them to slip. I would build pipelines for about 130 hires, not 120, giving an 8% buffer against declines and drop-offs.</p>
+      <h3>How many offers the plan needs</h3>
+      <p class="formula">Offers = hires ÷ (offer acceptance × joining rate)</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Case</th><th class="num">Offer acceptance</th><th class="num">Joining rate</th><th class="num">Offers for 120 hires</th><th class="num">Extra workload vs base</th></tr></thead>
+        <tbody>
+          <tr><td>Base plan</td><td class="num">85%</td><td class="num">91%</td><td class="num">About 155</td><td class="num">n/a</td></tr>
+          <tr><td>Acceptance falls</td><td class="num">75%</td><td class="num">91%</td><td class="num">About 176</td><td class="num">+21 offers (+14%)</td></tr>
+          <tr><td>Joining drop-off rises</td><td class="num">85%</td><td class="num">85%</td><td class="num">About 166</td><td class="num">+11 offers (+7%)</td></tr>
+          <tr><td>Both slip</td><td class="num">75%</td><td class="num">85%</td><td class="num">About 188</td><td class="num">+33 offers (+21%)</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Channel shortfalls and how the plan flexes</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Scenario</th><th>Gap</th><th>When I would know</th><th>Response</th></tr></thead>
+        <tbody>
+          <tr><td>Referrals deliver half the plan (15, not 30) in a new hub with no employee base</td><td>15 hires, mostly associates</td><td>Week 4 of month 2</td><td>Add a second assessment day at each partner college; move the sourcer onto associate pools; extend job-board campaigns</td></tr>
+          <tr><td>Returnship converts 50%, not 75% (12, not 18)</td><td>6 specialists or team leads</td><td>Week 8–12 of the cohort (months 2–3)</td><td>Keep silver-medal candidates from returnship selection warm; give 2–3 roles to the search firm early, allowing for notice periods</td></tr>
+          <tr><td>Offer acceptance stays near 75%</td><td>About 21 extra offers</td><td>4 weeks of data</td><td>Trigger contract recruiter; review offers against market with rewards</td></tr>
+          <tr><td>Referrals and acceptance both slip</td><td>8–10 hires short by month 6 without action</td><td>Month 3 dashboard</td><td>Contract recruiter from month 3, agency cap raised to 15% temporarily, and a phased go-live agreed with the client for the last seats</td></tr>
+        </tbody>
+      </table></div>
+      <p>I would share this table with the CHRO and the client at the start, so a shortfall triggers an agreed response rather than a surprise.</p>
+    </section>
+
+    <section id="stakeholders">
+      <h2><span class="n">13</span>Risks and stakeholder challenges I would expect</h2>
+      <p>The hardest part is unlikely to be sourcing. It will be keeping managers, finance and the client aligned when speed and quality pull in different directions.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Likely challenge</th><th>How I would hold the line</th><th>Evidence I would bring</th></tr></thead>
+        <tbody>
+          <tr><td>The client wants 20 associate start dates brought forward by 2 weeks</td><td>Offer a faster 2-stage process that keeps the scorecard and job preview; agree in writing which roles can move and which cannot</td><td>Weekly interview capacity; attrition of rushed hires vs others; the cost of re-hiring and retraining each early leaver</td></tr>
+          <tr><td>The client changes role requirements mid-search</td><td>Treat it as a change request and re-baseline start dates for the affected roles</td><td>Days lost per change; candidates in the pipeline who no longer fit</td></tr>
+          <tr><td>A hiring manager wants to skip the structured interview for an "obvious" candidate</td><td>Allow a shorter panel, but never skip the scorecard</td><td>Score spread across interviewers; early quality-of-hire results by manager</td></tr>
+          <tr><td>A manager repeatedly breaches SLAs</td><td>Review with the hub head; offer trained panel substitutes</td><td>Days each breach adds to time to fill; candidates lost while waiting</td></tr>
+          <tr><td>Finance questions paying for a returnship</td><td>Present it as a cost comparison, not a values argument</td><td>Cost per hire by channel; agency fees; re-hire cost avoided if returners stay</td></tr>
+          <tr><td>Leadership asks for weekly reassurance</td><td>One dashboard, one page, same format every week</td><td>Hires vs plan, funnel by role family, quality score, top 3 risks</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="validate">
+      <h2><span class="n">14</span>What I would validate in the first 30 days</h2>
+      <p>This plan rests on assumptions. Before committing budget, I would test the ones that would change the plan most if wrong.</p>
+      <ul class="checks">
+        <li><span><strong>Attrition causes:</strong> do exit data and hiring records support the hypotheses above?</span></li>
+        <li><span><strong>Recruiter productivity:</strong> do the company's own numbers match the rules of thumb in the capacity plan?</span></li>
+        <li><span><strong>Local market:</strong> salary benchmarks and talent supply for specialists in the hub city</span></li>
+        <li><span><strong>Returner demand:</strong> interest from returner communities, and host managers willing to take part</span></li>
+        <li><span><strong>Hiring-manager buy-in:</strong> 1:1 conversations with the first managers about scorecards and panels</span></li>
+        <li><span><strong>Tools:</strong> whether the current applicant tracking system can report quality-of-hire data</span></li>
+      </ul>
+      <p>I would also ask operations and rewards for shift, overtime and pay data, since the workplace hypotheses cannot be tested from TA data alone.</p>
+      <h3>What would make me change a bet</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>If the first 30 days show…</th><th>I would change…</th></tr></thead>
+        <tbody>
+          <tr><td>Exits are driven mainly by pay or shift patterns, not hiring</td><td>Put less effort into interview redesign and more into a joint case with operations and rewards; keep structured interviews light</td></tr>
+          <tr><td>Specialist supply in the city is thinner than modelled</td><td>Widen the search to nearby cities and hybrid roles, grow the returnship, and brief the search firm earlier</td></tr>
+          <tr><td>Returner interest or host-manager capacity is low</td><td>Run a smaller pilot and move those roles to direct sourcing</td></tr>
+          <tr><td>Recruiter productivity is well below the assumed figures</td><td>Add recruiters or extend contract support before month 1, not after the plan slips</td></tr>
+          <tr><td>Existing staff are unlikely to refer</td><td>Lower the referral target and shift volume to job boards and campus from the start</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+  <footer>
+    <p>The company and scenario are fictional and anonymised; all figures are planning assumptions or targets, not results.</p>
+    <p>&copy; Dr. Akanksha Gupta</p>
+  </footer>
+</div>
+  <script data-goatcounter="https://akanksha-gupta-07.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
