@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebuilding Trust in a Stalled AI Rollout | Dr. Akanksha Gupta</title>
+<meta name="description" content="An organisational development case study: how I would diagnose and recover a stalled AI rollout, from entry and the headcount question to pushing back on the tool, measuring success and an honest look at restructuring.">
+<meta property="og:title" content="Rebuilding Trust in a Stalled AI Rollout: an OD case study">
+<meta property="og:description" content="A stalled AI rollout is rarely just employee resistance. A proposal for diagnosing the tool, the launch and the fear, and fixing all three.">
+<meta property="og:image" content="https://akanksha-gupta-07.github.io/projects/ai-rollout-trust/assets/three-problems.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<meta name="theme-color" content="#0e3b43">
+<style>
+  :root {
+    --ink: #11262b;
+    --quiet: #55696d;
+    --line: #cddad8;
+    --paper: #f3f7f6;
+    --card: #ffffff;
+    --accent: #0b6e6e;
+    --accent-soft: #d6efe9;
+    --signal: #e0572f;
+    --hero-bg: #0e3b43;
+    --hero-ink: #f2faf8;
+    --hero-muted: #a9cdc9;
+    --serif: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --sans: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .masthead { background: var(--hero-bg); color: var(--hero-ink); }
+  nav.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; font-size: 15px; }
+  nav.top a { text-decoration: none; color: var(--hero-muted); }
+  nav.top a:hover { color: var(--hero-ink); }
+  nav.top .brand { font: 700 17px var(--serif); color: var(--hero-ink); }
+
+  header.hero { padding: 36px 0 56px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-muted); margin: 0 0 12px; }
+  h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 6vw, 56px); line-height: 1.04; letter-spacing: -.025em; margin: 0 0 18px; }
+  .lede { font-size: 20px; color: var(--hero-muted); margin: 0 0 24px; max-width: 680px; }
+  .meta { font-size: 14px; color: var(--hero-muted); margin-bottom: 28px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid transparent; transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--signal); color: #fff; }
+  .btn.ghost { border-color: rgba(242,250,248,.4); color: var(--hero-ink); }
+  #report .btn.ghost { border-color: var(--accent); color: var(--accent); }
+
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-weight: 700; font-size: 32px; line-height: 1.12; letter-spacing: -.02em; margin: 0 0 16px; }
+  h3 { font-size: 18px; margin: 0 0 6px; }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--quiet); }
+  .small { font-size: 14px; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .stat .num { font-family: var(--serif); font-size: 38px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 10px; }
+  .stat p { font-size: 15px; margin: 0; }
+  .stat .src { display: block; font-size: 12.5px; color: var(--quiet); margin-top: 8px; }
+
+  blockquote.story { margin: 0 0 20px; padding: 20px 24px; background: var(--card); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; font-family: var(--sans); font-style: italic; font-size: 19px; line-height: 1.55; }
+  figure { margin: 24px 0; }
+  figure img { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  figcaption { font-size: 13.5px; color: var(--quiet); margin-top: 8px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card .tag { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+  .card p { font-size: 15px; margin: 6px 0 0; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #f3f2ee; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+
+  ol.steps, ul.clean { padding-left: 20px; }
+  ol.steps li, ul.clean li { margin-bottom: 8px; }
+  .callout { background: var(--accent-soft); border-radius: 12px; padding: 20px 24px; }
+  .callout p:last-child { margin: 0; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skills span { font-size: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+  footer { padding: 40px 0 60px; font-size: 14px; color: var(--quiet); }
+  .refs li { font-size: 14px; margin-bottom: 6px; }
+
+  blockquote.say { margin: 0 0 20px; padding: 18px 22px; background: var(--card); border-left: 3px solid var(--signal); border-radius: 0 10px 10px 0; font-size: 17px; }
+  .note { font-size: 14px; color: var(--quiet); }
+  .tablewrap { overflow-x: auto; }
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    .stats { grid-template-columns: 1fr; }
+    section { padding: 36px 0; }
+    th, td { padding: 10px; }
+  }
+</style>
+<body>
+<div class="masthead">
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="../../">Dr. Akanksha Gupta</a>
+    <span><a href="../../">&larr; Portfolio</a> &nbsp;·&nbsp; <a href="#sources">Sources</a></span>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Case study · Organizational development</p>
+    <h1>Rebuilding Trust in a Stalled AI Rollout</h1>
+    <p class="lede">When an AI rollout stalls, leadership usually calls it employee resistance. It is rarely only that. A proposal for how I would diagnose the real causes and recover adoption and trust.</p>
+    <p class="meta">Dr. Akanksha Gupta · November 2026 · Scenario-based proposal with secondary research</p>
+    <div class="buttons">
+      <a class="btn primary" href="#phase1">Read the approach</a>
+      <a class="btn ghost" href="#principles">Jump to the principles</a>
+    </div>
+  </header>
+</div>
+</div>
+<div class="wrap">
+
+  <section id="situation">
+    <h2>The situation</h2>
+    <p class="muted small">This is a proposal, not a record of work done. The company and figures are hypothetical.</p>
+    <p>A company of about 800 people bought an AI tool to draft responses, summarise cases and route requests in operations and support. Six months after a town-hall launch, the CHRO asks me, as an OD consultant, to diagnose what went wrong and design a recovery plan.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">25%</div><p>of licensed users are active. Some teams quietly keep working the old way.</p><span class="src">Scenario</span></div>
+      <div class="stat"><div class="num">&darr;</div><p>Trust in leadership has dropped, and a rumour says the tool is there to cut headcount.</p><span class="src">Scenario</span></div>
+      <div class="stat"><div class="num">85% / 25%</div><p>of employees can use AI, but only a quarter use it regularly. The gap is common.</p><span class="src">IBM Global CEO Study 2026</span></div>
+    </div>
+  </section>
+
+  <section id="view">
+    <h2>My point of view</h2>
+    <p>A stalled rollout is typically three problems tangled together: a tool that doesn't fit the real work, a launch that left a vacuum rumours filled, and a fear nobody addressed. I would diagnose all three before fixing any, and I would be as willing to push back on leadership and the tool as on employees.</p>
+    <figure>
+      <img src="assets/three-problems.png" alt="Diagram: a stalled AI rollout (25% active use, falling trust, a layoff rumour) breaks into three problems. Tool doesn't fit the work: teach-me-your-job sessions, pilot the two use cases that work, push back where it doesn't. Launch left a vacuum: leadership first then managers, anonymous Q&amp;A and open house, every question answered. Fear nobody addressed: honest answer on headcount, just culture for tool errors, fair written selection criteria. Foundation: commit to process, never to outcomes, and measure against a Week 1 baseline.">
+      <figcaption>Each problem needs a different response and a different owner.</figcaption>
+    </figure>
+    <div class="callout"><p><strong>Guiding principle:</strong> the diagnosis is itself an intervention. In a company already afraid of cuts, every question I ask sends a signal, so sequence and framing matter as much as content.</p></div>
+  </section>
+
+  <section id="phase1">
+    <h2>Phase 1: Diagnosis without feeding the rumour</h2>
+    <p>I would enter gradually, starting with leadership, so the diagnosis doesn't look like a hunt for who to cut.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>When</th><th>Who</th><th>What I'm looking for</th></tr></thead>
+      <tbody>
+        <tr><td>Week 1</td><td>Leadership, one-on-one</td><td>What the tool is meant to change, what they expect of the system and of people, and whether leaders agree on what success means. Also: which use cases were defined before launch, and whether it was piloted</td></tr>
+        <tr><td>Week 1</td><td>Whole organisation</td><td>Introduction note from the CEO/CHRO</td></tr>
+        <tr><td>Week 1</td><td>All staff</td><td>Short anonymous baseline survey</td></tr>
+        <tr><td>Week 2</td><td>Middle managers</td><td>They sit between leadership and staff and often hold the real story</td></tr>
+        <tr><td>Weeks 2–3</td><td>Frontline staff</td><td>"Teach me your job" sessions (Phase 2)</td></tr>
+        <tr><td>Week 3</td><td>Teams where adoption works</td><td>What they do differently; the solution often already exists inside the organisation</td></tr>
+      </tbody>
+    </table></div>
+    <h3 style="margin-top:24px">The introduction note</h3>
+    <p>Signed by the CEO or CHRO, it would include who I am and why I'm there; a plain-language pointer to the tool with no claims about which tasks it will take over (in desk jobs that can sound like describing the whole role); an open house, with a day beforehand for anonymous questions; a link to the anonymous survey; and a commitment to make the tool a helping hand, not another box to tick.</p>
+    <p>I would deliberately leave the headcount rumour out of the note. In a low-trust setting, a written denial is unlikely to be believed.</p>
+    <p><strong>Week 1 baseline survey:</strong> run on a third-party tool so anonymity is believable. It tells me what people think before I engage, and gives a baseline to measure against later.</p>
+    <p><strong>The open house, with realistic expectations.</strong> I don't expect one session to put the rumour to rest. When trust has already dropped, people won't take a CEO's word on jobs. I would coach the CEO to name that skepticism directly:</p>
+    <blockquote class="say">"I know many of you won't take my word for this, and I understand why. Judge us by what we do over the next few months."</blockquote>
+    <p>The open house starts rebuilding trust; consistent follow-through does the rest. Every anonymous question gets an answer, at the open house or in a follow-up email.</p>
+  </section>
+
+  <section id="phase2">
+    <h2>Phase 2: The headcount question, answered without overpromising</h2>
+    <p>The anonymous question box makes it almost certain the open house will be asked: "Is this AI going to replace us?" The CEO privately expects support headcount may shrink in about 18 months. That makes this the riskiest moment in the programme.</p>
+    <p><strong>How I would counsel the CEO: commit to the process, never to outcomes.</strong> If she promises jobs are safe, the restructuring at Month 18 will destroy whatever trust we rebuilt. What she <em>can</em> control, and keep, is how change happens:</p>
+    <ul class="clean">
+      <li>People hear about any role change from leadership first, not through rumour</li>
+      <li>Affected people get notice and time to prepare</li>
+      <li>Anyone affected gets access to reskilling and first consideration for suitable internal openings, with support for those who move on</li>
+      <li>Selection, if it comes to that, follows written, fair criteria</li>
+    </ul>
+    <p><strong>The answer I would suggest:</strong></p>
+    <blockquote class="say">"I won't pretend nothing will change. Some work will change because of this tool, and some roles may change too. I can't promise every job stays as it is today. What I can commit to is this: you'll hear it from us first, with time to prepare, and anyone affected will get access to reskilling and first consideration for suitable roles here, where they exist. Where they don't, we will support people in moving on."</blockquote>
+    <h3>Using the time: a skills analysis</h3>
+    <p>Before leadership can answer honestly, the organisation needs to know which tasks the tool actually takes over, which still need human judgment, and which roles would be most affected. AI mostly automates tasks rather than whole jobs, so I would break each role into tasks.</p>
+    <h3>"Teach me your job"</h3>
+    <p>Employees are the best source, but I would never ask them to rate how replaceable their own tasks are. That frightens people and produces unreliable data. Instead, the employee teaches me their job, as the expert. This surfaces the small, overlooked details and shows which parts need a human. Sessions are run by me or HR, never by the person's own manager, and people are told upfront that insights will be used to improve workflows, shape the tool and design reskilling. I would add friction questions ("what slows you down?") and system data such as ticket volumes and handling times.</p>
+    <p>This matters because how managers <em>imagine</em> work is done often differs from how it's <em>actually</em> done. An analysis built from job descriptions alone would misjudge what the tool can take over.</p>
+  </section>
+
+  <section id="phase3">
+    <h2>Phase 3: When the problem isn't the people</h2>
+    <p>Two things would surface in Weeks 2–3: a resistant manager, and evidence about the tool itself. Each needs a different response.</p>
+    <h3>The resistant manager</h3>
+    <blockquote class="story">"My team's numbers are the best in the department. I'm not going to risk that for a tool nobody trained us on properly."</blockquote>
+    <p>Her two teams have adoption below 10%. What I'd read into it: she can't yet see how the tool helps; a smaller team could make her own role a restructuring target; "best team" status may shift once the tool changes how work is done; and her training complaint may simply be true, which I'd check before treating it as an excuse.</p>
+    <p>I would involve her rather than persuade her: her team pilots the tool and defines where human review is required. I'd also propose a <strong>just-culture rule</strong>: when quality slips because the tool got something wrong, it's logged as a tool issue, not a team failure, and staff who flag tool failures are recognised. That works across every new release, unlike a fixed grace period. Her objections are also data: resistant managers often see the tool's weak points first.</p>
+    <h3>Pushing back on leadership and the tool</h3>
+    <p>If the evidence shows the tool or workflow is the real cause, I would say so plainly, even though leadership bought the tool and hired me. Signals I'd look for: tasks that are slower with the tool once checking is included; use cases nobody defined before launch; workflows that weren't redesigned; and leaders who don't use the tool themselves.</p>
+    <p>What I might say to the CEO and the tool's owner (illustrative figures):</p>
+    <blockquote class="say">"Adoption is low mainly because, for three of the five core tasks, the tool is slower than the manual process once people check its output. More change management won't fix that. I recommend we narrow the rollout to the two use cases where it clearly helps, fix or drop the rest, and redesign those workflows with the teams that use them."</blockquote>
+    <p>Pushing a poorly fitting tool harder would confirm employees' suspicion that this is about cutting costs, not helping them.</p>
+    <h3>Partnering with product, IT and operations</h3>
+    <p>For the use cases that work, I would propose a short pilot loop with clear ownership, so I support the redesign without drifting into a product-management role.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Who</th><th>Owns</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Product / IT</strong></td><td>Tool configuration, fixes and the release schedule</td></tr>
+        <tr><td><strong>Operations</strong></td><td>The workflow design and the operational metrics (TAT, quality)</td></tr>
+        <tr><td><strong>Me (OD)</strong></td><td>The people side: who takes part, safe feedback channels, manager support, and the effect on roles and trust</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:20px"><strong>The loop, in 2–3 week cycles:</strong></p>
+    <ol class="steps">
+      <li>Pick one pilot team, ideally the resistant manager's, so the sceptics shape the design</li>
+      <li>Map the current workflow with the team and agree where human review is required</li>
+      <li>Capture a baseline: time per task including checking, and error rates</li>
+      <li>Run the redesigned workflow, with a short weekly feedback huddle I facilitate</li>
+      <li>Product/IT fixes the top issues; operations tracks the metrics</li>
+      <li>Decide together, against criteria agreed upfront, whether to scale, adjust or stop</li>
+    </ol>
+  </section>
+
+  <section id="phase4">
+    <h2>Phase 4: Measuring success</h2>
+    <p>At Month 6 the CHRO needs numbers for the board. I would measure four areas against the Week 1 baseline, because operational numbers alone wouldn't show whether the trust problem has improved.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Area</th><th>Example measures</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Adoption</strong></td><td>Teams using the tool regularly; staff confidence with it</td><td>Admin analytics (team level); pulse survey</td></tr>
+        <tr><td><strong>Efficiency</strong></td><td>Turnaround time; time per task before vs after; time freed for higher-value work</td><td>System data</td></tr>
+        <tr><td><strong>Quality</strong></td><td>Error rates; client responses vs before; tool issues flagged</td><td>System data; quality reviews</td></tr>
+        <tr><td><strong>People</strong></td><td>Trust in leadership; job-security worry; attrition; reskilling uptake</td><td>Anonymous survey; HR data</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:20px"><strong>Every metric gets a precise definition.</strong> "Adoption" = share of licensed users active on at least three days a week, kept separate from the employee engagement score.</p>
+    <p><strong>Measuring usage without surveillance:</strong> built-in admin analytics, no manual timestamping; team-level reporting only, with a minimum group size; and staff told upfront that usage data will never be used in performance reviews or role decisions. Indian law may not strictly require this for employment data, but trust does.</p>
+    <p><strong>Reading mixed results.</strong> If many have signed up but few use the tool regularly, I'd look at the tool before the people, including the "verification tax": checking AI output can take longer than doing the task. One survey found 42% of workers spend more time verifying AI output than it saves them.</p>
+  </section>
+
+  <section id="phase5">
+    <h2>Phase 5: The restructuring, and the reality check</h2>
+    <p>At Month 18 the CEO announces that support needs about 30% fewer people: roughly 45 of 150 roles, this quarter.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">45</div><p>support roles affected</p></div>
+      <div class="stat"><div class="num">60 &rarr; 25</div><p>entered reskilling; 25 on track for new roles so far</p></div>
+      <div class="stat"><div class="num">15</div><p>open roles in other departments</p></div>
+    </div>
+    <p style="margin-top:20px">Internal moves can cover only part of the 45. Some people will leave.</p>
+    <p><strong>Was the commitment kept?</strong> This is where the Phase 2 wording pays off. Because the CEO committed to process, not outcomes, she can keep her word: people hear first, with notice; everyone had access to reskilling; affected staff are considered first for the open roles; and those who leave get support. Had she promised "a path into new work for everyone," this restructuring would break it, and trust with it.</p>
+    <h3>The reality check</h3>
+    <p>In practice, headcount decisions are made by the CEO, CFO and board, usually driven by cost targets. An OD consultant has little say over the number or the timeline. Common real-world patterns:</p>
+    <ul class="clean">
+      <li><strong>Entry-level employees are hit hardest.</strong> Young workers in AI-exposed jobs are affected mainly through reduced hiring, and India's "last in, first out" retrenchment rule pushes cuts toward the newest hires.</li>
+      <li><strong>Women are often let go more easily than men.</strong> Selection bias is a practitioner observation, but exposure is documented: women's jobs are far more exposed to AI automation because women are concentrated in clerical and admin roles.</li>
+      <li><strong>Favourites are protected,</strong> or warned early and leave first, sometimes persuading others to resign.</li>
+    </ul>
+    <h3>Where I can still make a difference</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Real-world risk</th><th>What I can realistically do</th></tr></thead>
+      <tbody>
+        <tr><td>Entry-level hit hardest</td><td>Flag it; push for priority access to reskilling</td></tr>
+        <tr><td>Gender bias</td><td>Compare the proposed list with the workforce's makeup and raise any disproportion</td></tr>
+        <tr><td>Favouritism</td><td>Push for written, objective selection criteria</td></tr>
+        <tr><td>Leaks to favourites</td><td>Can't be fully prevented, since people talk even without bad intent. Reduce it by having leadership announce directly to the affected group, not through managers</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:20px">Legal risk is my most practical lever: leadership that ignores fairness arguments usually listens to the risk of discrimination claims. The people who stay often feel guilt, anxiety and lower commitment ("survivor syndrome"), and how leavers are treated decides whether trust recovers.</p>
+    <div class="callout"><p><strong>My own line:</strong> confidential data from "teach me your job" sessions, interviews and anonymous surveys is never used to decide who is let go. People shared it to improve their work. If asked, I would decline.</p></div>
+  </section>
+
+  <section id="principles">
+    <h2>Principles I'd carry into any change programme</h2>
+    <div class="cards">
+      <div class="card"><span class="tag">Diagnose</span><h3>Look at the tool before the people</h3><p>Low adoption is a symptom. Workflow fit and the checking burden can matter as much as mindset.</p></div>
+      <div class="card"><span class="tag">Advise</span><h3>Promise only what you control</h3><p>Commitments about process survive a restructuring; promises about outcomes don't.</p></div>
+      <div class="card"><span class="tag">Listen</span><h3>Treat resistance as information</h3><p>The most resistant manager often knows where the tool fails.</p></div>
+      <div class="card"><span class="tag">Integrity</span><h3>Be honest about my limits</h3><p>I can't change the headcount number, but I can influence fairness, communication and how data is used.</p></div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <h2>My approach</h2>
+    <p>I come to this from healthcare operations and project management (BDS, MHA, PMP), with more than eight years in consulting and startups. This case was developed by working through realistic scenarios, testing each decision against practical constraints, and then grounding it in secondary research.</p>
+    <div class="skills">
+      <span>Change management</span><span>Organizational diagnosis</span><span>Stakeholder management</span><span>Workforce planning</span><span>Program management</span><span>Measurement design</span><span>Ethical judgment</span>
+    </div>
+  </section>
+
+  <footer id="sources">
+    <p><strong>Sources:</strong>
+      <a href="https://www.hcamag.com/ca/news/general/most-employees-still-use-ai-at-beginner-level/580566">IBM Global CEO Study 2026 (via HCAMag)</a>;
+      <a href="https://courses.worldcampus.psu.edu/welcome/wfed578/001/content/03_lesson/06_page.html">Schein, process consultation (1999)</a>;
+      <a href="https://link.springer.com/content/pdf/10.1007/978-3-319-49820-1_6-1">Coch &amp; French (1948)</a>;
+      <a href="https://dash.harvard.edu/entities/publication/13a7b031-0fdd-45ec-a7e0-2b80e2bc679f">Edmondson (1999)</a>;
+      <a href="https://psnet.ahrq.gov/issue/your-companys-secret-change-agents">Pascale &amp; Sternin (2005)</a>;
+      <a href="https://digital-skills-jobs.europa.eu/en/inspiration/research/generative-ai-and-jobs-refined-global-index-occupational-exposure">ILO exposure index (2025)</a>;
+      <a href="https://nngroup.com/articles/contextual-inquiry">Contextual inquiry (NN/g)</a>;
+      <a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781003109945-52/work-imagined-work-done-erik-hollnagel-robyn-clay-williams">Hollnagel &amp; Clay-Williams</a>;
+      <a href="https://prime.mindtools.com/pages/article/SCARF.htm">Rock, SCARF (2008)</a>;
+      <a href="https://en.wikipedia.org/wiki/Just_culture">Just culture</a>;
+      <a href="https://fenix.iseg.ulisboa.pt/downloadFile/281608120752631/Kaplan%20%20Norton%20(1992).PDF">Kaplan &amp; Norton (1992)</a>;
+      <a href="https://www.adaptavist.com/blog/the-ai-efficiency-paradox-what-enterprise-leaders-must-know-before-costs-outweigh-productivity-benefits">Adaptavist, verification tax</a>;
+      <a href="https://elplaw.in/wp-content/uploads/2026/05/Processing-employee-related-data-Where-are-the-potential-boundaries.pdf">ELP on India's DPDP Rules</a>;
+      <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/">Stanford Digital Economy Lab (2026)</a>;
+      <a href="https://www.ilo.org/resource/news/new-ilo-data-confirm-women-face-higher-workplace-risks-generative-ai-men">ILO (2026)</a>;
+      <a href="https://www.shrm.org/topics-tools/news/employee-relations/survivor-syndrome-how-to-support-workers-after-layoffs">SHRM (2025)</a>;
+      <a href="https://ksandk.com/labour-employment/layoff-retrenchment-closure-industrial-relations-code-2020/">KS&amp;K on the Industrial Relations Code</a>.
+    </p>
+    <p>&copy; Dr. Akanksha Gupta</p>
+  </footer>
+</div>
+  <script data-goatcounter="https://akanksha-gupta-07.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
